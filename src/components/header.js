@@ -38,7 +38,6 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            <p>This is my header</p>
         </header>
     )
 }

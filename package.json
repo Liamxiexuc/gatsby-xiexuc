@@ -14,8 +14,12 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "fontsource-noto-serif": "^3.0.9",
     "gatsby": "^2.24.67",
     "gatsby-plugin-sass": "^2.3.17",
+    "gatsby-plugin-sharp": "^2.6.42",
+    "gatsby-remark-images": "^3.3.35",
+    "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-source-filesystem": "^2.3.35",
     "gatsby-transformer-remark": "^2.8.42",
     "node-sass": "^4.14.1",

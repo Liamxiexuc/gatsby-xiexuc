@@ -5,6 +5,8 @@ date: "2020-10-18"
 
 I just launched a new bootcamp!
 
+![James](./abb.webp)
+
 ## Topics Covered
 
 1. Gatsby

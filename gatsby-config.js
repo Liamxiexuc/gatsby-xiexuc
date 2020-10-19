@@ -3,6 +3,10 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+const os = require('os');
+const Linux_DIR = __dirname;
+const Win_DIR = Linux_DIR.replace(/\\/g,'\/');
+const DIR_NAME = os.type() === 'Windows_NT' ? Win_DIR : Linux_DIR;
 
 module.exports = {
   /* Your site config here */
@@ -11,7 +15,12 @@ module.exports = {
       author: 'Xiexu Chen'
   },
   plugins: [
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        data: `@import "${DIR_NAME}/src/styles/styles";`
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

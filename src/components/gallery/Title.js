@@ -5,7 +5,7 @@ const Title = () => {
   return (
     <div className={galleryStyles.title}>
       <h2>My Gallery</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>I collect something what I like.</p>
     </div>
   )
 }

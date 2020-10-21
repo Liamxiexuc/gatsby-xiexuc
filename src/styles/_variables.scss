@@ -10,3 +10,13 @@ $box-shadow: rgba(202, 150, 39, 0.25) 0px 64px 64px 0px,
             rgba(202, 150, 39, 0.25) 0px 16px 16px 0px,
             rgba(202, 150, 39, 0.25) 0px 8px 8px 0px, 
             rgba(202, 150, 39, 0.25) 0px 4px 4px 0px;
+
+/*********************
+*breakpoints
+***********************/
+$XS:     420px;
+$S:     480px;
+$M:     767px;
+$ML:	992px;
+$L:     1200px;
+$maxL:    $L + 1px;

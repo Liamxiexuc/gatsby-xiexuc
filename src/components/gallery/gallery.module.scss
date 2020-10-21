@@ -54,7 +54,6 @@ label {
 
 }
 
-
 .output {
     height: 60px;
     font-size: 0.8rem;
@@ -66,30 +65,31 @@ label {
 
 .img-grid {
     margin: 10px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.img-col {
+    display: flex;
+    flex-direction: column;
 }
 
 .img-wrap {
     overflow: hidden;
-    height: 0;
-    padding: 50% 0;
-    border-radius: 13px;
-    /* padding controls height, will always be perfectly square regardless of width */
-    position: relative;
-    opacity: 1;
+    width: 280px;
     &:hover {
         transform: translateY(-1%) scale(1.03);
         transition: all 0.5s;
     }
 
+    @include MQ(ML) {
+        width: 215px;
+    }
+
     img {
         width: 100%;
-        position: absolute;
         border-radius: 13px;
-        top: 0;
-        left: 0;
         &:hover {
             cursor: pointer;
         }

@@ -3,26 +3,35 @@
 }
 
 // Media Query Mixins
-@mixin mediaSm {
-    @media screen and (max-width: 500px) {
-        @content;
-    }
-}
-
-@mixin mediaMd {
-    @media screen and (max-width: 768px) {
-        @content;
-    }
-}
-
-@mixin mediaLg {
-    @media screen and (min-width: 769px) and (max-width: 1170px) {
-        @content;
-    }
-}
-
-@mixin mediaXl {
-    @media screen and (min-width: 1171px) {
-        @content;
-    }
+@mixin MQ($canvas) {
+	@if $canvas==XS {
+		@media only screen and (max-width: $XS) {
+			@content;
+		}
+	}
+	@if $canvas==S {
+		@media only screen and (max-width: $S) {
+			@content;
+		}
+	}
+	@else if $canvas==M {
+		@media only screen and (max-width: $M) {
+			@content;
+		}
+	}
+	@else if $canvas==ML {
+		@media only screen and (max-width: $ML) {
+			@content;
+		}
+	}
+	@else if $canvas==L {
+		@media only screen and (max-width: $L) {
+			@content;
+		}
+	}
+	@else if $canvas==maxL {
+		@media only screen and (min-width: $maxL) {
+			@content;
+		}
+	}
 }

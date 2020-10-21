@@ -1,14 +1,23 @@
 import React from "react"
 import { Link } from 'gatsby'
-import Layout from '../components/layout'
+import Fire from '../assets/fire.mp4'
+import landingStyles from './index.module.scss'
+
 
 const IndexPage = () => {
   return (
-		<Layout>
-      <h1>Hello,</h1>
-			<h2>I'm Xiexu Chen, a full-stack developer living in Hobart.</h2>
-			<p>Need a developer?</p> <Link to='/contact'>Contact me</Link>
-    </Layout>
+		<div>
+      <section className={landingStyles.showcase}>
+        <div className={landingStyles.videoContainer}>
+          <video src={Fire} autoPlay muted loop></video>
+        </div>
+        <div className={landingStyles.content}>
+          <h1>Light On Your Camping Fire</h1>
+          <h3>I'm Xiexu Chen, a full-stack developer living in Hobart.</h3>
+          <Link to='/home' className={landingStyles.btn} >Read More</Link>
+        </div>
+      </section>
+    </div>
   )
 }
 

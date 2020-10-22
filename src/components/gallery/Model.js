@@ -5,7 +5,6 @@ import galleryStyles from './gallery.module.scss'
 const Modal = ({ setSelectedImg, selectedImg }) => {
 
     const handleClick = (e) => {
-        console.log(process.env.FIREBASE_KEY)
         if (e.target.classList.contains('backdrop')) {
             setSelectedImg(null);
         }

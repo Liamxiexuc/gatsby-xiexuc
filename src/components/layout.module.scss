@@ -16,5 +16,9 @@
         padding: 1rem 2rem;
         max-width: 1050px;
         margin: 0 auto;
+
+        @include MQ(S) {
+            padding: 0.5rem 1rem;
+        }
     }
 }

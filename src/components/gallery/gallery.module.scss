@@ -36,7 +36,7 @@ label {
     font-size: 24px;
 
     &:hover {
-        background: $primary-color;
+        background: $secondary-color;
         color: white;
         cursor: pointer;
         transform: scale(1.2);
@@ -73,6 +73,10 @@ label {
 .img-col {
     display: flex;
     flex-direction: column;
+
+    @include MQ(S) {
+        margin: 0 auto;
+    }
 }
 
 .img-wrap {
@@ -84,7 +88,15 @@ label {
     }
 
     @include MQ(ML) {
-        width: 215px;
+        width: 330px;
+    }
+
+    @include MQ(S) {
+        width: 157px;
+    }
+
+    @include MQ(XXS) {
+        width: 256px;
     }
 
     img {

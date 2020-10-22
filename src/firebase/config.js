@@ -2,8 +2,6 @@ import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import 'firebase/firestore';
 
-console.log(process.env.FIREBASE_KEY)
-
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: process.env.FIREBASE_KEY,

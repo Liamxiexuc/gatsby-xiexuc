@@ -28,6 +28,12 @@ const Header = () => {
         },
     ];
 
+    const [showMenu, setShowMenu] = useState(false);
+
+    const handleClickMenu = () => {
+        setShowMenu(!showMenu)
+    }
+
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -63,6 +69,11 @@ const Header = () => {
                     ))}
                 </ul>
             </nav>
+            <div className={!showMenu ? headerStyles.menuBtn : `${headerStyles.menuBtn} ${headerStyles.close}`} onClick={handleClickMenu}>
+                <div className={headerStyles.btnLine}></div>
+                <div className={`${headerStyles.btnLine} ${headerStyles.btnLineShort}`}></div>
+                <div className={headerStyles.btnLine}></div>
+            </div>
         </header>
     )
 }

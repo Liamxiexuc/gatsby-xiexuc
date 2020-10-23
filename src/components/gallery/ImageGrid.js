@@ -1,10 +1,11 @@
 import React from 'react';
 import useFirestore from '../../hooks/useFirestore';
 import { motion } from 'framer-motion';
+import Loader from '../../components/loader/Loader';
 import galleryStyles from './gallery.module.scss'
 
 const ImageGrid = ({ setSelectedImg }) => {
-    const { docs } = useFirestore('images');
+    const { docs, isLoading } = useFirestore('images');
 
     const MobileView = ({docs}) => {
         return (
@@ -162,7 +163,7 @@ const ImageGrid = ({ setSelectedImg }) => {
 
     return (
         <React.Fragment>
-            {docs.length ? <ImgView docs={docs} /> : null}
+            {isLoading ? <Loader /> : <ImgView docs={docs}/>}
         </React.Fragment>
     )
 }

@@ -5,6 +5,8 @@
     position: fixed;
     width: 100%;
     background-color: #ffffff;
+    align-items: center;
+    z-index: 1;
     -webkit-transition-property: height,padding,background-color,box-shadow;
     transition-property: height,padding,background-color,box-shadow;
     -webkit-transition-duration: .35s;
@@ -71,6 +73,7 @@
     margin-right: 1.3rem;
     text-decoration: none;
     font-weight: 600;
+    padding: 2px 0;
     &:hover {
         color: #666666;
     }
@@ -79,4 +82,70 @@
 
 .active-nav-item {
     color: #333333;
+    border-bottom: 3px solid $green;
+}
+
+.menu-btn {
+    display: none;
+
+    &:hover {
+        .btn-line-short {
+            width: 28px;
+        }
+    }
+
+    @include MQ(ML) {
+        display: block;
+        position: absolute;
+        z-index: 3;
+        right: 48px;
+        top: 50px;
+        cursor: pointer;
+        @include easeOut;
+    }
+
+    @include MQ(S) {
+        top: 38px;
+        right: 20px;
+    }
+
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: $landing-color;
+        @include easeOut;
+    }
+
+    .btn-line-short {
+        width: 20px;
+    }
+
+      //Rotate Into X With Menu Lines
+    &.close {
+        transform: rotate(180deg);
+
+        .menu-btn {
+            top: 40px;
+
+            @include MQ(S) {
+                top: 35px;
+            }
+        }
+
+        .btn-line {
+            // Line 1 - Rotate
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            // Line 2 - Hide
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            // Line 3 - Rotate
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+        }
+    }
 }

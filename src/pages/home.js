@@ -17,7 +17,7 @@ const HomePage = () => {
                     <p className={homeStyles.text}>
                         I'm a full-stack developer living in Hobart.
                         <br />
-                        I creating modern and responsive Web Application.
+                        I create modern and responsive Web Applications.
                     </p>
                 </div>
                 <div className={homeStyles.logoWrap}>

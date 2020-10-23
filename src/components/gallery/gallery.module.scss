@@ -65,14 +65,16 @@ label {
 
 .img-grid {
     margin: 10px auto;
+    padding-bottom: 4rem;
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: center;
 }
 
 .img-col {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 
     @include MQ(S) {
         margin: 0 auto;
@@ -82,17 +84,19 @@ label {
 .img-wrap {
     overflow: hidden;
     width: 280px;
+    margin-bottom: 1.45rem;
+
     &:hover {
         transform: translateY(-1%) scale(1.03);
         transition: all 0.5s;
     }
 
     @include MQ(ML) {
-        width: 330px;
+        width: 298px;
     }
 
     @include MQ(S) {
-        width: 157px;
+        width: 153px;
     }
 
     @include MQ(XXS) {

@@ -1,11 +1,28 @@
 .header {
-    padding: 1.5rem 2rem 1.5rem;
+    padding: 2rem 2rem 1rem;
     display: flex;
     justify-content: space-between;
     position: fixed;
     width: 100%;
     background-color: #ffffff;
+    -webkit-transition-property: height,padding,background-color,box-shadow;
+    transition-property: height,padding,background-color,box-shadow;
+    -webkit-transition-duration: .35s;
+    transition-duration: .35s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+
+    @include MQ(S) {
+        padding: 2rem 1rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &.stickHeader {
+        box-shadow: 0 0 30px 0 rgba(0,0,0,.1);
+        padding-top: 1rem;
+    }
 }
+
 
 .headerNav {
     display: flex;
@@ -16,6 +33,12 @@
     width: 220px;
     height: 40px;
     margin-bottom: 0;
+    margin-left: 18px;
+
+    @include MQ(S) {
+        margin-left: 0;
+        width: 136px;
+    }
 }
 
 .title {
@@ -30,7 +53,11 @@
     }
 }
 
-
+.header-nav {
+    @include MQ(ML) {
+        display: none;
+    }
+}
 
 .nav-list {
     display: flex;
@@ -40,9 +67,10 @@
 
 .nav-item {
     color: #666666;
-    font-size: .9rem;
+    font-size: .8rem;
     margin-right: 1.3rem;
     text-decoration: none;
+    font-weight: 600;
     &:hover {
         color: #666666;
     }

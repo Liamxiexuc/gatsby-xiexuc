@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Tab from './Tab';
 import headerStyles from "./header.module.scss"
@@ -38,8 +38,19 @@ const Header = () => {
         }
     `)
 
+    const [scrollTop, setScrollTop] = useState(0);
+
+    useEffect(() => {
+        const onScroll = e => {
+            setScrollTop(e.target.documentElement.scrollTop);
+        };
+        window.addEventListener("scroll", onScroll);
+    
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [scrollTop]);
+
     return (
-        <header className={headerStyles.header}>
+        <header className={scrollTop === 0 ? headerStyles.header : `${headerStyles.header} ${headerStyles.stickHeader}`}>
             <div className={headerStyles.logoContainer}>
                 <Link className={headerStyles.title} to='/'>
                     <img src={signiture}></img>

@@ -2,6 +2,17 @@
     transition: all 0.5s ease-out;
 }
 
+@mixin fadeIn {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-animation: fadeInUp .5s ease;
+    animation: fadeInUp .5s ease;
+}
+
 // Media Query Mixins
 @mixin MQ($canvas) {
 	@if $canvas==XXS {

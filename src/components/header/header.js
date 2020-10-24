@@ -69,10 +69,9 @@ const Header = () => {
                     ))}
                 </ul>
             </nav>
-            <div className={!showMenu ? headerStyles.menuBtn : `${headerStyles.menuBtn} ${headerStyles.close}`} onClick={handleClickMenu}>
-                <div className={headerStyles.btnLine}></div>
-                <div className={`${headerStyles.btnLine} ${headerStyles.btnLineShort}`}></div>
-                <div className={headerStyles.btnLine}></div>
+            <input type="checkbox" className={scrollTop === 0 ? headerStyles.toggler : `${headerStyles.toggler} ${headerStyles.stickToggler}`} />
+            <div className={scrollTop === 0 ? headerStyles.hamburger : `${headerStyles.hamburger} ${headerStyles.stickHamburger}`} >
+                <div></div>
             </div>
         </header>
     )

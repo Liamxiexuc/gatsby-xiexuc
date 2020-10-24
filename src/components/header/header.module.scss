@@ -7,12 +7,11 @@
     background-color: #ffffff;
     align-items: center;
     z-index: 1;
-    -webkit-transition-property: height,padding,background-color,box-shadow;
-    transition-property: height,padding,background-color,box-shadow;
-    -webkit-transition-duration: .35s;
-    transition-duration: .35s;
-    -webkit-transition-timing-function: ease;
-    transition-timing-function: ease;
+    @include ease;
+
+    @include MQ(ML) {
+        padding-left: 1.5rem;
+    }
 
     @include MQ(S) {
         padding: 2rem 1rem 1rem;
@@ -22,6 +21,11 @@
     &.stickHeader {
         box-shadow: 0 0 30px 0 rgba(0,0,0,.1);
         padding-top: 1rem;
+
+        @include MQ(ML) {
+            padding-top: 12px;
+            padding-bottom: 6px;
+        }
     }
 }
 
@@ -84,67 +88,106 @@
     color: #333333;
 }
 
-.menu-btn {
-    display: none;
-
-    &:hover {
-        .btn-line-short {
-            width: 28px;
-        }
-    }
+.toggler {
+    position: absolute;
+    top: 18px;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0;
+    @include ease;
 
     @include MQ(ML) {
-        display: block;
-        position: absolute;
-        z-index: 3;
-        right: 48px;
-        top: 50px;
-        cursor: pointer;
-        @include easeOut;
-    }
-
-    @include MQ(S) {
-        top: 38px;
+        width: 65px;
+        height: 65px;
         right: 20px;
     }
 
-    .btn-line {
-        width: 28px;
+    @include MQ(S) {
+        width: 60px;
+        height: 60px;
+        right: 4px;
+    }
+}
+
+.stick-toggler {
+    top: -1px;
+    @include ease;
+}
+
+.hamburger {
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    padding: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include ease;
+
+    @include MQ(ML) {
+        width: 65px;
+        height: 65px;
+        right: 20px;
+    }
+
+    @include MQ(S) {
+        width: 60px;
+        height: 60px;
+        right: 4px;
+    }
+
+    & > div {
+        position: relative;
+        flex: none;
+        width: 100%;
         height: 3px;
-        margin: 0 0 5px 0;
-        background: $landing-color;
-        @include easeOut;
-    }
+        background: $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
 
-    .btn-line-short {
-        width: 20px;
-    }
-
-      //Rotate Into X With Menu Lines
-    &.close {
-        transform: rotate(180deg);
-
-        .menu-btn {
-            top: 40px;
-
-            @include MQ(S) {
-                top: 35px;
-            }
-        }
-
-        .btn-line {
-            // Line 1 - Rotate
-            &:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-            // Line 2 - Hide
-            &:nth-child(2) {
-                opacity: 0;
-            }
-            // Line 3 - Rotate
-            &:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -6px);
-            }
+        &::after {
+            top: 10px;
         }
     }
+}
+
+.stick-hamburger {
+    top: -1px;
+    @include ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.hamburger > div::before,
+.hamburger > div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 3px;
+    line-height: 20px;
+    background: inherit;
+}
+
+/* Moves Line Down */
+.hamburger > div::after {
+    top: 10px;
+}
+
+/* Toggler Animation */
+.toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+}
+
+.toggler:checked + .hamburger > div:before,
+.toggler:checked + .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
 }

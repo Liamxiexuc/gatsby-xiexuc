@@ -62,17 +62,19 @@ const Header = () => {
                     <img src={signiture}></img>
                 </Link>
             </div>
-            <nav className={headerStyles.headerNav}>
-                <ul className={headerStyles.navList}>
-                    {routes.map((route) => (
-                        <Tab route={route} key={route.url} />
-                    ))}
-                </ul>
-            </nav>
             <input type="checkbox" className={scrollTop === 0 ? headerStyles.toggler : `${headerStyles.toggler} ${headerStyles.stickToggler}`} />
             <div className={scrollTop === 0 ? headerStyles.hamburger : `${headerStyles.hamburger} ${headerStyles.stickHamburger}`} >
                 <div></div>
             </div>
+            <nav className={scrollTop === 0 ? headerStyles.headerNav : `${headerStyles.headerNav} ${headerStyles.stickHeader}`}>
+                <div className={headerStyles.navWrap}>
+                    <ul className={headerStyles.navList}>
+                        {routes.map((route) => (
+                            <Tab route={route} key={route.url} />
+                        ))}
+                    </ul>
+                </div>
+            </nav>
         </header>
     )
 }

@@ -29,12 +29,6 @@
     }
 }
 
-
-.headerNav {
-    display: flex;
-    align-items: center;
-}
-
 .logoContainer {
     width: 220px;
     height: 40px;
@@ -56,12 +50,6 @@
     img {
         width: 100%;
         height: 100%;
-    }
-}
-
-.header-nav {
-    @include MQ(ML) {
-        display: none;
     }
 }
 
@@ -180,6 +168,7 @@
 /* Toggler Animation */
 .toggler:checked + .hamburger > div {
     transform: rotate(135deg);
+    background-color: #fff;
 }
 
 .toggler:checked + .hamburger > div:before,
@@ -190,4 +179,66 @@
 
 .toggler:checked:hover + .hamburger > div {
     transform: rotate(225deg);
+}
+
+.header-nav {
+    @include MQ(ML) {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+        display: none;
+    }
+}
+
+.toggler:checked ~ .header-nav {
+
+    @include MQ(ML) {
+        display: block;
+        position: absolute;
+        width: 100vh;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        background-color: #000000;
+        transform: translate3d(0, 0, 0);
+        transition: opacity .5s linear .25s,transform .5s;
+
+        & .nav-wrap {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        & .nav-list {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        & .nav-item {
+            padding: 0 15%;
+            color: #fff;
+            font-size: 2.6rem;
+            position: relative;
+
+            li {
+                padding: 1.5rem;
+            }
+        }
+
+        & .active-nav-item {
+            &::after {
+                content: '';
+                position: absolute;
+                height: 8px;
+                background-color: $green;
+                left: 0;
+                right: 70%;
+                bottom: 0;
+            }
+        }
+
+    }
+
 }

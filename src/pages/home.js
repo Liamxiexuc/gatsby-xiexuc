@@ -21,10 +21,10 @@ const HomePage = () => {
                     </p>
                 </div>
                 <div className={homeStyles.logoWrap}>
-                    <a><Github /></a>
-                    <a><Instagram /></a>
-                    <a><Linkdin /></a>
-                    <a><Facebook /></a>
+                    <a href='https://github.com/Liamxiexuc' target='_blank'><Github /></a>
+                    <a href='https://www.instagram.com/nehc_uxeix' target='_blank'><Instagram /></a>
+                    <a href='https://www.linkedin.com/in/liam-chen' target='_blank'><Linkdin /></a>
+                    <a href='https://www.facebook.com/people/Xiexu-Chen/100011499607808' target='_blank'><Facebook /></a>
                 </div>
 
             </section>

@@ -1,0 +1,49 @@
+.wrap {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+
+    a {
+        text-decoration: none;
+        flex: 1;
+        min-width: 270px;
+        max-width: 400px;
+    }
+}
+
+.card {
+    height: 100%;
+    margin: 1rem;
+    border-radius: 2px;
+    box-shadow: $box-shadow;
+    @include ease;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 8px 26px 0px;
+        @include ease;
+
+        .img-wrap {
+            transform: scale(1.05);
+            @include ease;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 17px 46px -5px;
+            border-radius: 5px;
+        }
+    }
+}
+
+.card-header {
+    padding: 1rem;
+
+    h3 {
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 0.9em;
+        color: $landing-color;
+    }
+}
+
+.card-footer {
+    padding: 1.5rem 1rem 1rem;
+}

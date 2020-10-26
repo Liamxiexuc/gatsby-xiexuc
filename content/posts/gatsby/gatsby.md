@@ -1,15 +1,11 @@
 ---
-title: "The Great Gatsby Bootcamp"
+title: "Won't be too long"
 type: "blog"
-date: "2020-10-18"
+date: "2020-10-10"
 ---
 
-I just launched a new bootcamp!
+All the blogs are currently under construction
 
 ![James](./abb.webp)
 
-## Topics Covered
-
-1. Gatsby
-2. GraphQL
-3. React
+## Coming Soon

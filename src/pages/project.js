@@ -15,6 +15,7 @@ const ProjectPage = () => {
                     frontmatter {
                         title
                         type
+                        sort
                         date
                         brief
                         keywords

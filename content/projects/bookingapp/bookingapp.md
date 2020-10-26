@@ -1,6 +1,7 @@
 ---
 title: "Consultation Booking App"
 type: "project"
+sort: "3"
 date: "2020-10-18"
 coverImage: "./bookingapp.png"
 brief: "A consultation booking app build for AIBT Global"

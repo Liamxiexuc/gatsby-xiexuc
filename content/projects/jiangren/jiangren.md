@@ -1,6 +1,7 @@
 ---
 title: "JR Official Website"
 type: "project"
+sort: "1"
 date: "2020-10-18"
 coverImage: "./jiangren.png"
 brief: "The official website of JR Academy"

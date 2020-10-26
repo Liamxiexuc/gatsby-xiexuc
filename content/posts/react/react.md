@@ -1,13 +1,9 @@
 ---
-title: "React"
+title: "Welcome to my blog"
 type: "blog"
-date: "2020-10-18"
+date: "2020-9-7"
 ---
 
-In this post you'll learn React.
+All the blogs are currently under construction.
 
-## Topics Covered
 
-1. Gatsby
-2. GraphQL
-3. React

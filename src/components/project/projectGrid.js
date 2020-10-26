@@ -4,11 +4,21 @@ import ProjectCard from './ProjectCard'
 import projectStyles from './project.module.scss'
 
 const ProjectGrid = ({ projects }) => {
-    console.log(projects)
+
+    const sorter = sort => {
+        return (a, b) => {
+            const value1 = Number(a.node.frontmatter[sort]);
+            const value2 = Number(b.node.frontmatter[sort]);
+            return value1 - value2;
+        }
+    }
+    
+    const sortProjects = projects.sort(sorter('sort'))
+
     return (
         <div className={projectStyles.wrap}>
             {
-                projects.map(project => {
+                sortProjects.map(project => {
                     const { title, date, coverImage, brief, keywords } = project.node.frontmatter;
                     const { slug } = project.node.fields;
 

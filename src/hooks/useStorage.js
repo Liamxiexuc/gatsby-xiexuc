@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { projectStorage, projectFirestore, timestamp } from '../firebase/config';
+import { isNode } from "@firebase/util";
 
 const useStorage = file => {
     const [progress, setProgress] = useState(0);
@@ -7,6 +8,10 @@ const useStorage = file => {
     const [url, setUrl] = useState(null);
 
     useEffect(() => {
+
+        if (isNode() === true) {
+            return null;
+        }
         // references
         const storageRef = projectStorage.ref(file.name);
         const collectionRef = projectFirestore.collection('images');

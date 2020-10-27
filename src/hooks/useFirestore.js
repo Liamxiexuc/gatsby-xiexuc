@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
 import { projectFirestore } from '../firebase/config';
+import { isNode } from "@firebase/util";
 
 const useFirestore = (collection) => {
     const [docs, setDocs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        if (isNode() === true) {
+            return null;
+        }
         const unsub = projectFirestore.collection(collection)
             .orderBy('createdAt', 'desc')
             .onSnapshot(snap => {

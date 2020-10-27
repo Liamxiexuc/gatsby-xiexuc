@@ -19,11 +19,11 @@ const ProjectGrid = ({ projects }) => {
         <div className={projectStyles.wrap}>
             {
                 sortProjects.map(project => {
-                    const { title, date, coverImage, brief, keywords } = project.node.frontmatter;
+                    const { title, date, url, coverImage, brief, keywords } = project.node.frontmatter;
                     const { slug } = project.node.fields;
 
                     return (
-                        <Link to={slug} key={slug}>
+                        <Link to={url} key={slug} target="_blank">
                             <ProjectCard title={title} date={date} coverImage={coverImage} brief={brief} keyword={keywords}/>
                         </Link>
                     )

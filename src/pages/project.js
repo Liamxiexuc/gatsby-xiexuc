@@ -17,6 +17,7 @@ const ProjectPage = () => {
                         type
                         sort
                         date
+                        url
                         brief
                         keywords
                         coverImage {

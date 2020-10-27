@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
 import { projectFirestore } from '../firebase/config';
-import { isNode } from "@firebase/util";
 
 const useFirestore = (collection) => {
     const [docs, setDocs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (isNode() === true) {
-            return null;
-        } else {
             const unsub = projectFirestore.collection(collection)
             .orderBy('createdAt', 'desc')
             .onSnapshot(snap => {
@@ -20,7 +16,6 @@ const useFirestore = (collection) => {
                 setDocs(documents);
                 setIsLoading(false);
             });
-        }
 
         return () => unsub();
         // this is a cleanup function that react will run when

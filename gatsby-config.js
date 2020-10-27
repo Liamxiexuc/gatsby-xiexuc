@@ -55,5 +55,5 @@ module.exports = {
       }
     }
   ],
-  pathPrefix: "/personal-website-gatsby"
+  pathPrefix: "/gatsby-xiexuc"
 }

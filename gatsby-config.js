@@ -55,4 +55,7 @@ module.exports = {
       }
     }
   ],
+  module.exports = {
+    pathPrefix: "/personal-website-gatsby",
+  }
 }

@@ -12,11 +12,24 @@ var firebaseConfig = {
     messagingSenderId: "399983928342",
     appId: "1:399983928342:web:80684166cdba4692a24137"
 };
+
+let instance = null;
+
+export default function getFirebase() {
+    if (typeof window !== 'undefined') {
+        if (instance) return instance;
+        instance = firebase.initializeApp(firebaseConfig);
+        return instance;
+    }
+
+    return null;
+}
+
 // Initialize Firebase
-firebase.default.initializeApp(firebaseConfig);
+/* firebase.default.initializeApp(firebaseConfig);
 
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectStorage, projectFirestore, timestamp };
+export { projectStorage, projectFirestore, timestamp }; */

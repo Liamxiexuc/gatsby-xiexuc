@@ -11,7 +11,7 @@ const ProjectCard = ({ title, coverImage, date, brief, keywords }) => {
             </div>
             <div className={projectStyles.cardBody}>
                 <div className={projectStyles.imgWrap}>
-                    <Img fluid={coverImage.childImageSharp.fluid}/>
+                    <Img alt='project' fluid={coverImage.childImageSharp.fluid}/>
                 </div>
             </div>
             <div className={projectStyles.cardFooter}>

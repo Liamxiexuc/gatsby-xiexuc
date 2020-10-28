@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/layout'
 import ProjectGrid from '../components/project/projectGrid'
 import  { MARKDAWN_SCHEMA } from '../constants/option'
@@ -23,7 +23,7 @@ const ProjectPage = () => {
                         coverImage {
                             childImageSharp {
                                 fluid (maxWidth: 600) {
-                                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                                    ...GatsbyImageSharpFluid_withWebp
                                 }
                             }
                         }

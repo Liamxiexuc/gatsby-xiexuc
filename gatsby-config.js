@@ -66,6 +66,5 @@ module.exports = {
         icon: `src/assets/favicon.png`
       },
     },
-  ],
-  pathPrefix: "/gatsby-xiexuc"
+  ]
 }

@@ -53,7 +53,18 @@ module.exports = {
           }
         ]
       }
-    }
-  ],
-  pathPrefix: "/gatsby-xiexuc"
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Xiexuc.xyz`,
+        short_name: `Xiexuc`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/assets/favicon.png`
+      },
+    },
+  ]
 }

@@ -29,10 +29,8 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "fire.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

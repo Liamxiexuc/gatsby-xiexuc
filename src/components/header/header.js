@@ -28,22 +28,6 @@ const Header = () => {
         },
     ];
 
-    const [showMenu, setShowMenu] = useState(false);
-
-    const handleClickMenu = () => {
-        setShowMenu(!showMenu)
-    }
-
-    const data = useStaticQuery(graphql`
-        query {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-        }
-    `)
-
     const [scrollTop, setScrollTop] = useState(0);
 
     useEffect(() => {
@@ -59,7 +43,7 @@ const Header = () => {
         <header className={scrollTop === 0 ? headerStyles.header : `${headerStyles.header} ${headerStyles.stickHeader}`}>
             <div className={headerStyles.logoContainer}>
                 <Link className={headerStyles.title} to='/'>
-                    <img src={signiture}></img>
+                    <img alt='logo' src={signiture}></img>
                 </Link>
             </div>
             <input type="checkbox" className={scrollTop === 0 ? headerStyles.toggler : `${headerStyles.toggler} ${headerStyles.stickToggler}`} />

@@ -6,7 +6,6 @@ import landingStyles from './index.module.scss'
 
 const IndexPage = () => {
   return (
-		<div>
       <section className={landingStyles.showcase}>
         <div className={landingStyles.videoContainer}>
           <video src={Fire} autoPlay muted loop></video>
@@ -23,7 +22,6 @@ const IndexPage = () => {
           </Link>
         </div>
       </section>
-    </div>
   )
 }
 

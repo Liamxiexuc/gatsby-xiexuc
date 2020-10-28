@@ -4,19 +4,32 @@ import 'firebase/firestore';
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: process.env.FIREBASE_KEY,
+    apiKey: "AIzaSyDyoI70H0vfI9JCeTxu3zzk8TnHl69ktQo",
     authDomain: "xiexuc-mygallery.firebaseapp.com",
     databaseURL: "https://xiexuc-mygallery.firebaseio.com",
     projectId: "xiexuc-mygallery",
-    storageBucket: process.env.FIREBASE_BUCKET,
+    storageBucket: "xiexuc-mygallery.appspot.com",
     messagingSenderId: "399983928342",
-    appId: process.env.FIREBASE_APPID
+    appId: "1:399983928342:web:80684166cdba4692a24137"
 };
+
+let instance = null;
+
+export default function getFirebase() {
+    if (typeof window !== 'undefined') {
+        if (instance) return instance;
+        instance = firebase.initializeApp(firebaseConfig);
+        return instance;
+    }
+
+    return null;
+}
+
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+/* firebase.default.initializeApp(firebaseConfig);
 
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectStorage, projectFirestore, timestamp };
+export { projectStorage, projectFirestore, timestamp }; */

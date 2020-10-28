@@ -33,7 +33,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/assets/images`
+        path: `${__dirname}/src/assets/`
       }
     },
     
@@ -55,7 +55,5 @@ module.exports = {
       }
     }
   ],
-  module.exports = {
-    pathPrefix: "/personal-website-gatsby",
-  }
+  pathPrefix: "/gatsby-xiexuc"
 }

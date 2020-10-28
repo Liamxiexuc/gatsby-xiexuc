@@ -1,5 +1,3 @@
-import 'fontsource-noto-serif'
-
 import "firebase/auth"
 import "firebase/firestore"
 import "firebase/storage"

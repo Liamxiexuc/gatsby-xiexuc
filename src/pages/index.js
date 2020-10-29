@@ -8,7 +8,9 @@ import landingStyles from './index.module.scss'
 const IndexPage = ({ data }) => {
   return (
       <section className={landingStyles.showcase}>
-        <video src={Fire} autoPlay muted loop></video>
+        <div className={landingStyles.videoContainer}>
+          <video src={Fire} autoPlay muted loop></video>
+        </div>
         <Img alt='fire' className={landingStyles.coverImg} style={{position: 'absolute'}} fluid={data.file.childImageSharp.fluid}/>
         <div className={landingStyles.content}>
           <h1>Light On Your Camping Fire</h1>

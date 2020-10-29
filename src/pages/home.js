@@ -20,14 +20,14 @@ const HomePage = () => {
                         <p className={homeStyles.text}>
                             I'm a full-stack developer living in Hobart.
                             <br />
-                            I create modern and responsive Web Applications.
+                            I create modern and responsive <Link to='/project' className={homeStyles.textDecor}>Web Applications</Link>.
                         </p>
                     </div>
                     <div className={homeStyles.logoWrap}>
-                        <a href='https://github.com/Liamxiexuc' target='_blank'><Github /></a>
-                        <a href='https://www.instagram.com/nehc_uxeix' target='_blank'><Instagram /></a>
-                        <a href='https://www.linkedin.com/in/liam-chen' target='_blank'><Linkdin /></a>
-                        <a href='https://www.facebook.com/people/Xiexu-Chen/100011499607808' target='_blank'><Facebook /></a>
+                        <a href='https://github.com/Liamxiexuc' target='_blank' rel='noreferrer noopener'><Github /></a>
+                        <a href='https://www.instagram.com/nehc_uxeix' target='_blank' rel='noreferrer noopener'><Instagram /></a>
+                        <a href='https://www.linkedin.com/in/liam-chen' target='_blank' rel='noreferrer noopener'><Linkdin /></a>
+                        <a href='https://www.facebook.com/people/Xiexu-Chen/100011499607808' target='_blank' rel='noreferrer noopener'><Facebook /></a>
                     </div>
 
                 </section>

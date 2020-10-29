@@ -35,6 +35,47 @@
     }
 }
 
+.text-decor {
+    position: relative;
+    color: $secondary-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        &::after {
+            background-color: $yellow;
+            transform: scaleX(1);
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        height: .5em;
+        background-color: $secondary-color;
+        left: 0;
+        right: 0;
+        opacity: .1;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        height: .5em;
+        background-color: $yellow;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: all .3s cubic-bezier(.86,0,.07,1);
+    }
+
+}
+
 .logo-wrap {
     display: flex;
     justify-content: start;

@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Footer from "./footer"
 import Header from "./header/header"
 import "../styles/base.scss"

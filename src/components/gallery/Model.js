@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import galleryStyles from './gallery.module.scss'
 
 const Modal = ({ setSelectedImg, selectedImg }) => {
 

@@ -1,8 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
 const path = require(`path`);
 const os = require('os');
 const Linux_DIR = __dirname;
@@ -10,12 +5,14 @@ const Win_DIR = Linux_DIR.replace(/\\/g,'\/');
 const DIR_NAME = os.type() === 'Windows_NT' ? Win_DIR : Linux_DIR;
 
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
       title: 'gatsby-xiexuc',
-      author: 'Xiexu Chen'
+      author: 'Xiexu Chen',
+      description: 'Personal blog by Xiexu Chen. I make websites.',
+      url: 'https://xiexuc.xyz'
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-sass',
       options: {

@@ -3,11 +3,13 @@ import { Link, graphql } from 'gatsby'
 import Fire from '../assets/fire.mp4'
 import Img from "gatsby-image"
 import landingStyles from './index.module.scss'
+import Seo from '../components/Seo'
 
 
 const IndexPage = ({ data }) => {
   return (
       <section className={landingStyles.showcase}>
+        <Seo />
         <div className={landingStyles.videoContainer}>
           <video src={Fire} autoPlay muted loop></video>
         </div>

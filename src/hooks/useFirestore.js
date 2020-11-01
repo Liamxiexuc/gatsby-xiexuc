@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
-import useFirebase from './useFirebase';
+import getFirebase from '../firebase/config'
 
 const useFirestore = (collection) => {
-    const firebase = useFirebase();
     const [docs, setDocs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (!firebase) return;
-        const unsub = firebase.firestore().collection(collection)
+        const { projectFirestore } = getFirebase();
+        const unsub = projectFirestore.collection(collection)
         .orderBy('createdAt', 'desc')
         .onSnapshot(snap => {
             let documents = [];
@@ -22,7 +21,7 @@ const useFirestore = (collection) => {
         return () => unsub();
         // this is a cleanup function that react will run when
         // a component using the hook unmounts
-    }, [firebase, collection]);
+    }, [collection]);
 
     return { docs, isLoading };
 }

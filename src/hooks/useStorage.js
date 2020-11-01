@@ -21,12 +21,12 @@ const useStorage = file => {
             setError(err);
         }, async () => {
             const url = await storageRef.getDownloadURL();
-            const createdAt = firebase.firestore.FieldValue.serverTimestamp();
+            const createdAt = firebase.firebase_.firestore.FieldValue.serverTimestamp();
             await collectionRef.add({ url, createdAt });
             setUrl(url);
         })
 
-    }, [file]);
+    }, [firebase, file]);
 
     return { progress, url, error }
 }

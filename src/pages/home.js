@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { Link } from 'gatsby'
+import { motion } from 'framer-motion'
 import Layout from '../components/layout'
 import Seo from '../components/Seo'
 import homeStyles from './home.module.scss'
@@ -13,7 +14,11 @@ const HomePage = () => {
         <Fragment>
             <Seo  title='my home page'/>
             <Layout>
-                <section className={homeStyles.introBox}>
+                <motion.div
+                    className={homeStyles.introBox}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, y: -30 }}
+                >
                     <div>
                         <p className={homeStyles.pretitle}>HELLO, MY NAME IS XIEXU</p>
                         <h1>I make websites.</h1>
@@ -29,8 +34,7 @@ const HomePage = () => {
                         <a href='https://www.linkedin.com/in/liam-chen' target='_blank' rel='noreferrer noopener'><Linkdin /></a>
                         <a href='https://www.facebook.com/people/Xiexu-Chen/100011499607808' target='_blank' rel='noreferrer noopener'><Facebook /></a>
                     </div>
-
-                </section>
+                </motion.div>
             </Layout>
         </Fragment>
     )

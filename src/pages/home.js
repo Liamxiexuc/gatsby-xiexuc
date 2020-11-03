@@ -17,7 +17,7 @@ const HomePage = () => {
                 <motion.div
                     className={homeStyles.introBox}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    animate={{ opacity: 1, y: -30 }}
                 >
                     <div>
                         <p className={homeStyles.pretitle}>HELLO, MY NAME IS XIEXU</p>

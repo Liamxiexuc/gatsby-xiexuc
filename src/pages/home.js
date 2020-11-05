@@ -16,7 +16,7 @@ const HomePage = () => {
             <Layout>
                 <motion.div
                     className={homeStyles.introBox}
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: 0, y: 0 }}
                     animate={{ opacity: 1, y: -30 }}
                 >
                     <div>

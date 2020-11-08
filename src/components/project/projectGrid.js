@@ -23,7 +23,7 @@ const ProjectGrid = ({ projects }) => {
                     const { slug } = project.node.fields;
 
                     return (
-                        <Link to={url} key={slug} target="_blank">
+                        <Link to={slug} key={slug} target="_blank">
                             <ProjectCard title={title} date={date} coverImage={coverImage} brief={brief} keyword={keywords}/>
                         </Link>
                     )

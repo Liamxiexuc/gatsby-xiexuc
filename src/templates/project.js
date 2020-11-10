@@ -118,9 +118,12 @@ const Project = (props) => {
                     {
                         frontImage ? (
                             <Img alt='project' className={projectStyles.showImg} fluid={frontImage.childImageSharp.fluid}/>
-                        ) : (
+                        ) : null
+                    }
+                    {
+                        !frontImage && coverImage ? (
                             <Img alt='project' className={projectStyles.showImg} fluid={coverImage.childImageSharp.fluid}/>
-                        )
+                        ) : null
                     }
                 </div>
                 <Container>

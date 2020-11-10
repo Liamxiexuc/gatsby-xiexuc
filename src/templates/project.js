@@ -124,10 +124,17 @@ const Project = (props) => {
                 <Container>
                     <div className={projectStyles.contentHolder}>
                         <aside>
-                            <div className={projectStyles.block}>
-                                <span>Website</span>
-                                <a className={projectStyles.sourceLink} href={url} target='_blank' rel='noreferrer noopener'>Visit Website</a>
-                            </div>
+                            { mobileOne ? (
+                                <div className={projectStyles.block}>
+                                    <span>Website</span>
+                                    <a className={projectStyles.sourceLink} href={url} target='_blank' rel='noreferrer noopener'>Visit Website</a>
+                                </div>
+                            ) : (
+                                <div className={projectStyles.block}>
+                                    <span>Repository</span>
+                                    <a className={projectStyles.sourceLink} href={url} target='_blank' rel='noreferrer noopener'>Visit Repo</a>
+                                </div>
+                            )}
                             <div className={projectStyles.block}>
                                 <span>Features</span>
                                 <ul>
@@ -189,7 +196,7 @@ const Project = (props) => {
                     </div>
                     <div className={projectStyles.inTouch}>
                         <p>Creating future-proof digital experiences is what I do. </p>
-                        <a className={projectStyles.emailLink} href="mailto:liam_xiexuc@gmail.com">liam_xiexuc@gmail.com</a>
+                        <a className={projectStyles.emailLink} href="mailto:liam.xiexuc@gmail.com">liam.xiexuc@gmail.com</a>
                         <ul className={projectStyles.iconList}>
                             <li>
                                 <a href='https://github.com/Liamxiexuc' target='_blank' rel='noreferrer noopener'><Github /></a>

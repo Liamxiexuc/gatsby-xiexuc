@@ -46,6 +46,13 @@ export const query = graphql`
                         }
                     }
                 }
+                frontImage {
+                    childImageSharp {
+                        fluid (maxWidth: 1580, maxHeight: 755) {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
                 mobileOne {
                     childImageSharp {
                         fluid (maxWidth: 2000) {
@@ -95,7 +102,7 @@ export const query = graphql`
 `
 
 const Project = (props) => {
-    const { title, subTitle, content, description, keywords, url, mobileOne, mobileTwo, coverImage, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.markdownRemark.frontmatter;
+    const { title, subTitle, content, description, keywords, url, coverImage, frontImage, mobileOne, mobileTwo, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.markdownRemark.frontmatter;
     const features = keywords.split(',');
     const [activeSlide, setActiveSlide] = useState('01');
 
@@ -111,7 +118,15 @@ const Project = (props) => {
                     </Link>
                     <h1>{title}</h1>
                 </Container>
-                <Img alt='project' className={projectStyles.showImg} fluid={coverImage.childImageSharp.fluid}/>
+                <div className={projectStyles.frontImgWrap}>
+                    {
+                        frontImage ? (
+                            <Img alt='project' className={projectStyles.showImg} fluid={frontImage.childImageSharp.fluid}/>
+                        ) : (
+                            <Img alt='project' className={projectStyles.showImg} fluid={coverImage.childImageSharp.fluid}/>
+                        )
+                    }
+                </div>
                 <Container>
                     <div className={projectStyles.contentHolder}>
                         <aside>

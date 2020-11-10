@@ -73,17 +73,20 @@
     }
 }
 
-.show-img {
-    max-height: 400px;
-    margin-bottom: 60px;
+.front-img-wrap {
+    margin: 0 auto;
+    max-width: 1550px;
+    margin-bottom: 30px;
+
 
     @include MQ(ML) {
         margin-bottom: 40px;
     }
+
 }
 
 .content-holder {
-    padding-top: 60px;
+    padding-top: 30px;
     margin-bottom: 60px;
     display: flex;
     text-align: left;
@@ -137,13 +140,13 @@
         font-size: 48px;
         line-height: 52px;
         letter-spacing: -1px;
-        margin-bottom: 36px;
+        margin-bottom: 30px;
     }
 
     h3 {
         font-size: 32px;
         line-height: 42px;
-        margin-bottom: 78px;
+        margin-bottom: 52px;
 
         @include MQ(L) {
             font-size: 24px;

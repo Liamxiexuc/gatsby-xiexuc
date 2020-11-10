@@ -1,21 +1,15 @@
 import React, { Fragment, useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
-import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Header from "../components/header/header"
 import Seo from '../components/Seo'
+import Carousel from '../components/carousel/Carousel'
 import Container from '../components/Container'
 import Github from '../assets/ICON/Github'
 import Instagram from '../assets/ICON/Instagram'
 import Linkdin from '../assets/ICON/Linkdin'
 import Facebook from '../assets/ICON/Facebook'
 import projectStyles from "./project.module.scss"
-import 'swiper/swiper.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
-
-SwiperCore.use([ Pagination, Scrollbar]);
 
 export const query = graphql`
     query (
@@ -104,7 +98,6 @@ export const query = graphql`
 const Project = (props) => {
     const { title, subTitle, content, description, keywords, url, coverImage, frontImage, mobileOne, mobileTwo, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.markdownRemark.frontmatter;
     const features = keywords.split(',');
-    const [activeSlide, setActiveSlide] = useState('01');
 
     return (
         <Fragment>
@@ -153,38 +146,11 @@ const Project = (props) => {
                     </div>
                 </Container>
             </section>
-            <section className={projectStyles.sliderCounter}>
-                <strong>Inner pages: </strong>
-                <div className={projectStyles.counterWrap}>
-                    <div className={projectStyles.currentSlide}>
-                        {activeSlide}
-                    </div>
-                    <div className={projectStyles.totalSlide}>
-                        04
-                    </div>
-                </div>
-            </section>
-            <section className={projectStyles.fullWidthGallery}>
-                <Swiper
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    pagination={{ clickable: true }}
-                    onSlideChange={(swiper) => setActiveSlide(`0${(parseInt(swiper.activeIndex) + 1)}`)}
-                >
-                    <SwiperSlide>
-                        <Img alt='project slider' className={projectStyles.sliderImg} fluid={sliderOne.childImageSharp.fluid}/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Img alt='project slider' className={projectStyles.sliderImg} fluid={sliderTwo.childImageSharp.fluid}/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Img alt='project slider' className={projectStyles.sliderImg} fluid={sliderThree.childImageSharp.fluid}/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Img alt='project slider' className={projectStyles.sliderImg} fluid={sliderFour.childImageSharp.fluid}/>
-                    </SwiperSlide>
-                </Swiper>
-            </section>
+                {
+                    sliderOne ? (
+                        <Carousel sliderOne={sliderOne} sliderTwo={sliderTwo} sliderThree={sliderThree} sliderFour={sliderFour} />
+                    ) : null
+                }
             <section className={projectStyles.headingWrap}>
                 <Container>
                     <h3>Mobile Devices View</h3>

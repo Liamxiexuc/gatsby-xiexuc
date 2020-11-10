@@ -1,0 +1,107 @@
+
+.slider-counter {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 60px 0 37px;
+
+    @include MQ(M) {
+        padding: 30px 24px 27px;
+    }
+
+    @include MQ(XXS) {
+        padding: 30px 12px 27px;
+    }
+
+    h3 {
+        order: 2;
+        text-align: center;
+        flex-shrink: 1;
+        flex-grow: 1;
+
+        @include MQ(M) {
+            order: 0;
+            text-align: left;
+        }
+    }
+
+    .counter-wrap {
+        font-size: 126px;
+        line-height: 130px;
+        font-weight: 400;
+        width: 100%;
+        order: 1;
+        text-align: center;
+        padding: 0 0 38px;
+        display: flex;
+        justify-content: center;
+
+        @include MQ(M) {
+            font-size: 60px;
+            line-height: 60px;
+            text-align: right;
+            width: auto;
+            padding: 0;
+        }
+    }
+
+    .current-slide {
+        display: inline-block;
+        vertical-align: middle;
+        margin: -62px 0 0;
+        text-align: center;
+        font-size: 126px;
+        line-height: 130px;
+        color: $green;
+
+        @include MQ(M) {
+            font-size: 60px;
+            line-height: 60px;
+            text-align: right;
+            margin: -12px 0 0;
+            padding-right: 10px;
+        }
+    }
+
+    .total-slide {
+        margin-left: 5px;
+        position: relative;
+        letter-spacing: 4px;
+        padding-left: 32px;
+
+        @include MQ(M) {
+            margin-left: 0;
+            padding-left: 10px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 4px;
+            border-right: 1px solid #000;
+            height: 100px;
+            -webkit-transform: rotate(24deg);
+            transform: rotate(24deg);
+
+            @include MQ(M) {
+                height: 50px;
+                left: -2px;
+                top: 2px;
+            }
+        }
+    }
+}
+
+.full-width-gallery {
+    margin-bottom: 80px;
+
+    .slider-img {
+        @include MQ(M) {
+            height: 460px;
+            width: 100%;
+        }
+    }
+
+}

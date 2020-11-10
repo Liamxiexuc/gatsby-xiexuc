@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include MQ(ML) {
+        text-align: center;
+    }
+}

@@ -4,7 +4,7 @@
     margin: 0 auto;
     padding: 0 15px;
 
-    @include MQ(M) {
+    @include MQ(ML) {
         text-align: center;
     }
 }

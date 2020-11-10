@@ -1,9 +1,10 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import Header from "../components/header/header"
 import Seo from '../components/Seo'
 import Carousel from '../components/carousel/Carousel'
+import PhoneShowCase from '../components/phoneShowCase/PhoneShowCase'
 import Container from '../components/Container'
 import Github from '../assets/ICON/Github'
 import Instagram from '../assets/ICON/Instagram'
@@ -146,28 +147,16 @@ const Project = (props) => {
                     </div>
                 </Container>
             </section>
-                {
-                    sliderOne ? (
-                        <Carousel sliderOne={sliderOne} sliderTwo={sliderTwo} sliderThree={sliderThree} sliderFour={sliderFour} />
-                    ) : null
-                }
-            <section className={projectStyles.headingWrap}>
-                <Container>
-                    <h3>Mobile Devices View</h3>
-                </Container>
-            </section>
-            <section className={projectStyles.phoneWrap}>
-                <Container>
-                    <div className={projectStyles.phoneListing}>
-                        <div className={projectStyles.slide}>
-                            <Img alt='project mobile view' className={projectStyles.mobileImg} fluid={mobileOne.childImageSharp.fluid}/>
-                        </div>
-                        <div className={projectStyles.slide}>
-                            <Img alt='project mobile view' className={projectStyles.mobileImg} fluid={mobileTwo.childImageSharp.fluid}/>
-                        </div>
-                    </div>
-                </Container>
-            </section>
+            {
+                sliderOne ? (
+                    <Carousel sliderOne={sliderOne} sliderTwo={sliderTwo} sliderThree={sliderThree} sliderFour={sliderFour} />
+                ) : null
+            }
+            {
+                mobileOne ? (
+                    <PhoneShowCase mobileOne={mobileOne} mobileTwo={mobileTwo} />
+                ) : null
+            }
             <Container>
                 <div className={projectStyles.getInTouch}>
                     <div className={projectStyles.block}>

@@ -14,18 +14,15 @@
         padding: 30px 12px 27px;
     }
 
-    strong {
+    h3 {
         order: 2;
         text-align: center;
         flex-shrink: 1;
         flex-grow: 1;
-        font-size: 18px;
-        line-height: 26px;
 
         @include MQ(M) {
             order: 0;
             text-align: left;
-            font-size: 16px;
         }
     }
 

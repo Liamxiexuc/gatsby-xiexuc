@@ -16,7 +16,7 @@ export const Carousel = ({ sliderOne, sliderTwo, sliderThree, sliderFour }) => {
     return (
         <Fragment>
             <section className={carouselStyles.sliderCounter}>
-                <strong>Inner pages: </strong>
+                <h3>Inner Pages</h3>
                 <div className={carouselStyles.counterWrap}>
                     <div className={carouselStyles.currentSlide}>
                         {activeSlide}

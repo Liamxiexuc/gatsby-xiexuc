@@ -98,8 +98,10 @@ export const query = graphql`
 
 const Project = (props) => {
     const { title, subTitle, content, description, keywords, url, coverImage, frontImage, mobileOne, mobileTwo, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.markdownRemark.frontmatter;
-    const features = keywords.split(',');
-
+    let features = [];
+    if (keywords) {
+        features = keywords.split(',');
+    }
     return (
         <Fragment>
             <Seo  title='my project'/>

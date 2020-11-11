@@ -36,6 +36,10 @@ export const query = graphql`
                 content
                 description
                 keywords
+                prevTitle
+                prevUrl
+                nextTitle
+                nextUrl
                 coverImage {
                     childImageSharp {
                         fluid (maxWidth: 2000) {
@@ -99,11 +103,18 @@ export const query = graphql`
 `
 
 const Project = (props) => {
-    const { title, subTitle, content, description, keywords, url, coverImage, frontImage, mobileOne, mobileTwo, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.project.frontmatter;
+    const { title, subTitle, content, description, keywords, prevTitle, prevUrl, nextTitle, nextUrl, url, coverImage, frontImage, mobileOne, mobileTwo, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.project.frontmatter;
     let features = [];
     if (keywords) {
         features = keywords.split(',');
     }
+
+    const isMidPage = !!(prevTitle && nextTitle);
+    const isFirstPage = !prevTitle;
+    const isLastPage = !nextTitle;
+    const hiddenPrev = isFirstPage  ? projectStyles.hidden : null;
+    const hiddenNext = isLastPage  ? projectStyles.hidden : null;
+
     return (
         <Fragment>
             <Seo  title='my project'/>
@@ -173,13 +184,13 @@ const Project = (props) => {
             }
             <section className={projectStyles.pageSwitch}>
                 <div className={projectStyles.pageSwitchContainer}>
-                    <Link className={projectStyles.prev} to='/home'>
+                    <Link className={`${projectStyles.prev} ${hiddenPrev}`} to={prevUrl}>
                         <LeftArrow />
-                        Previous
+                        {prevTitle}
                     </Link>
-                    <Link className={projectStyles.next} to='/home'>
+                    <Link className={`${projectStyles.next} ${hiddenNext}`} to={nextUrl}>
                         <RightArrow />
-                        Next
+                        {nextTitle}
                     </Link>
                 </div>
             </section>

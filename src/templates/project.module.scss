@@ -195,7 +195,7 @@
 .pageSwitch {
     display: block;
     background-color: $green;
-    padding: 58px 0 68px;
+    padding: 60px 0 72px;
     @include MQ(ML) {
         display: none;
     }
@@ -217,7 +217,7 @@
         position: relative;
         margin-top: 24px;
         max-width: calc(50% - 20px);
-        font-size: 36px;
+        font-size: 32px;
         line-height: 38px;
         color: #0c0c0c;
         font-weight: 600;
@@ -275,6 +275,10 @@
             right: 0;
         }
     }
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .get-in-touch {

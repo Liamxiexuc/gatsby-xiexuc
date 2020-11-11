@@ -17,6 +17,10 @@ brief: "A consultation booking app built for AIBT Global"
 content: "AIBTGlobal is one of the top private vocational education providers in Australia, specialising in vocational training and academic pathway programs to both international and domestic students. Established in 2015, AIBTGlobal delivers over 90 Australian qualifications to over 3,100 international students from over 70 different countries. "
 description: "AIBTGlobal has state-of-the-art modern campuses located in Brisbane, Sydney and Hobart. This Consultation Booking System makes it much easier for the school's students and staff to manage and schedule their own consultations"
 keywords: "React, NodeJs, MongoDB"
+prevTitle: "JR Official Website"
+prevUrl: "/project/jiangren"
+nextTitle: "Tweets PaaS"
+nextUrl: "/project/tweetpaas"
 ---
 
 Consultation Booking App

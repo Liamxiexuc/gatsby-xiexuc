@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
 import Header from "../components/header/header"
 import Seo from '../components/Seo'
@@ -10,13 +10,15 @@ import Github from '../assets/ICON/Github'
 import Instagram from '../assets/ICON/Instagram'
 import Linkdin from '../assets/ICON/Linkdin'
 import Facebook from '../assets/ICON/Facebook'
+import LeftArrow from '../assets/ICON/LeftArrow'
+import RightArrow from '../assets/ICON/RightArrow'
 import projectStyles from "./project.module.scss"
 
 export const query = graphql`
     query (
         $slug: String!
     ) {
-        markdownRemark (
+        project: markdownRemark (
             fields: {
                 slug: {
                     eq: $slug
@@ -34,6 +36,10 @@ export const query = graphql`
                 content
                 description
                 keywords
+                prevTitle
+                prevUrl
+                nextTitle
+                nextUrl
                 coverImage {
                     childImageSharp {
                         fluid (maxWidth: 2000) {
@@ -97,8 +103,14 @@ export const query = graphql`
 `
 
 const Project = (props) => {
-    const { title, subTitle, content, description, keywords, url, coverImage, frontImage, mobileOne, mobileTwo, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.markdownRemark.frontmatter;
-    const features = keywords.split(',');
+    const { title, subTitle, content, description, keywords, prevTitle, prevUrl, nextTitle, nextUrl, url, coverImage, frontImage, mobileOne, mobileTwo, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.project.frontmatter;
+    let features = [];
+    if (keywords) {
+        features = keywords.split(',');
+    }
+
+    const hiddenPrev = !prevTitle  ? projectStyles.hidden : null;
+    const hiddenNext = !nextTitle  ? projectStyles.hidden : null;
 
     return (
         <Fragment>
@@ -116,9 +128,12 @@ const Project = (props) => {
                     {
                         frontImage ? (
                             <Img alt='project' className={projectStyles.showImg} fluid={frontImage.childImageSharp.fluid}/>
-                        ) : (
+                        ) : null
+                    }
+                    {
+                        !frontImage && coverImage ? (
                             <Img alt='project' className={projectStyles.showImg} fluid={coverImage.childImageSharp.fluid}/>
-                        )
+                        ) : null
                     }
                 </div>
                 <Container>
@@ -164,6 +179,18 @@ const Project = (props) => {
                     <PhoneShowCase mobileOne={mobileOne} mobileTwo={mobileTwo} />
                 ) : null
             }
+            <section className={projectStyles.pageSwitch}>
+                <div className={projectStyles.pageSwitchContainer}>
+                    <Link className={`${projectStyles.prev} ${hiddenPrev}`} to={prevUrl}>
+                        <LeftArrow />
+                        {prevTitle}
+                    </Link>
+                    <Link className={`${projectStyles.next} ${hiddenNext}`} to={nextUrl}>
+                        <RightArrow />
+                        {nextTitle}
+                    </Link>
+                </div>
+            </section>
             <Container>
                 <div className={projectStyles.getInTouch}>
                     <div className={projectStyles.block}>

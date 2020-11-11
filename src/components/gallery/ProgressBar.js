@@ -7,9 +7,7 @@ const ProgressBar = ({ file, setFile, setError }) => {
     const { progress, url, error } = useStorage(file);
 
     useEffect(() => {
-        if (url) {
-            setFile(null);
-        }
+        url && setFile(null);
         if (error) {
             setError('You are not allowed');
             setFile(null);

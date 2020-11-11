@@ -109,11 +109,8 @@ const Project = (props) => {
         features = keywords.split(',');
     }
 
-    const isMidPage = !!(prevTitle && nextTitle);
-    const isFirstPage = !prevTitle;
-    const isLastPage = !nextTitle;
-    const hiddenPrev = isFirstPage  ? projectStyles.hidden : null;
-    const hiddenNext = isLastPage  ? projectStyles.hidden : null;
+    const hiddenPrev = !prevTitle  ? projectStyles.hidden : null;
+    const hiddenNext = !nextTitle  ? projectStyles.hidden : null;
 
     return (
         <Fragment>

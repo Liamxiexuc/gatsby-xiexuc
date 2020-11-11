@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
 import Header from "../components/header/header"
 import Seo from '../components/Seo'
@@ -10,13 +10,15 @@ import Github from '../assets/ICON/Github'
 import Instagram from '../assets/ICON/Instagram'
 import Linkdin from '../assets/ICON/Linkdin'
 import Facebook from '../assets/ICON/Facebook'
+import LeftArrow from '../assets/ICON/LeftArrow'
+import RightArrow from '../assets/ICON/RightArrow'
 import projectStyles from "./project.module.scss"
 
 export const query = graphql`
     query (
         $slug: String!
     ) {
-        markdownRemark (
+        project: markdownRemark (
             fields: {
                 slug: {
                     eq: $slug
@@ -97,7 +99,7 @@ export const query = graphql`
 `
 
 const Project = (props) => {
-    const { title, subTitle, content, description, keywords, url, coverImage, frontImage, mobileOne, mobileTwo, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.markdownRemark.frontmatter;
+    const { title, subTitle, content, description, keywords, url, coverImage, frontImage, mobileOne, mobileTwo, sliderOne, sliderTwo, sliderThree, sliderFour } = props.data.project.frontmatter;
     let features = [];
     if (keywords) {
         features = keywords.split(',');
@@ -169,6 +171,18 @@ const Project = (props) => {
                     <PhoneShowCase mobileOne={mobileOne} mobileTwo={mobileTwo} />
                 ) : null
             }
+            <section className={projectStyles.pageSwitch}>
+                <div className={projectStyles.pageSwitchContainer}>
+                    <Link className={projectStyles.prev} to='/home'>
+                        <LeftArrow />
+                        Previous
+                    </Link>
+                    <Link className={projectStyles.next} to='/home'>
+                        <RightArrow />
+                        Next
+                    </Link>
+                </div>
+            </section>
             <Container>
                 <div className={projectStyles.getInTouch}>
                     <div className={projectStyles.block}>

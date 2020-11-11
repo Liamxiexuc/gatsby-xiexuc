@@ -3,14 +3,16 @@ import useStorage from '../../hooks/useStorage';
 import { motion } from 'framer-motion';
 import galleryStyles from './gallery.module.scss'
 
-const ProgressBar = ({ file, setFile }) => {
-    const { progress, url } = useStorage(file);
+const ProgressBar = ({ file, setFile, setError }) => {
+    const { progress, url, error } = useStorage(file);
 
     useEffect(() => {
-        if (url) {
+        url && setFile(null);
+        if (error) {
+            setError('You are not allowed');
             setFile(null);
         }
-    }, [url, setFile]); 
+    }, [url, setFile, error]); 
 
     return (
         <motion.div 

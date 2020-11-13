@@ -7,6 +7,7 @@ import Seo from '../components/Seo'
 import Carousel from '../components/carousel/Carousel'
 import PhoneShowCase from '../components/phoneShowCase/PhoneShowCase'
 import Container from '../components/Container'
+import GetInTouch from '../components/getInTouch/GetInTouch'
 import LeftArrow from '../assets/ICON/LeftArrow'
 import RightArrow from '../assets/ICON/RightArrow'
 import projectStyles from "./project.module.scss"
@@ -188,21 +189,7 @@ const Project = (props) => {
                     </Link>
                 </div>
             </section>
-            <Container>
-                <div className={projectStyles.getInTouch}>
-                    <div className={projectStyles.block}>
-                        <h4>Want to build some <br/> Great Works together?</h4>
-                        <Link className={projectStyles.requestLink} to='/contact'>
-                            Get in touch
-                        </Link>
-                    </div>
-                    <div className={projectStyles.block}>
-                        <p>
-                            I collaborate with innovative company to create cutting-edge digital experiences. Let's connect.
-                        </p>
-                    </div>
-                </div>
-            </Container>
+            <GetInTouch />
             <Footer />
         </Fragment>
     )

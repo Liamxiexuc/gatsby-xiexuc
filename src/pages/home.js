@@ -50,10 +50,46 @@ const HomePage = () => {
                     <BottomArrow className={homeStyles.arrow} onClick={gotoProjectSection} />
                 </motion.div>
                 <section ref={projectSection} className={homeStyles.project}>
-                <h2 className={homeStyles.h1}>Experiences I've Created</h2>
-                <FluidImage imgName='raffle.png' />
-                <FluidImage imgName='raffle.png' />
-            </section>
+                    <h2>Experiences I've Created</h2>
+                    <div className={homeStyles.projectWrap}>
+                        <div className={homeStyles.item}>
+                            <div className={homeStyles.imgWrap}>
+                                <FluidImage imgName='jrdashboard.png' />
+                            </div>
+                            <h4><a>JR Dashboard</a></h4>
+                        </div>
+                        <div className={homeStyles.item}>
+                            <div className={homeStyles.imgWrap}>
+                                <FluidImage imgName='jiangren.png' />
+                            </div>
+                            <h4><a>JR Official Website</a></h4>
+                        </div>
+                        <div className={homeStyles.item}>
+                            <div className={homeStyles.imgWrap}>
+                                <FluidImage imgName='raffle.png' />
+                            </div>
+                            <h4><a>PROJECT</a></h4>
+                        </div>
+                        <div className={homeStyles.item}>
+                            <div className={homeStyles.imgWrap}>
+                                <FluidImage imgName='raffle.png' />
+                            </div>
+                            <h4><a>PROJECT</a></h4>
+                        </div>
+                        <div className={homeStyles.item}>
+                            <div className={homeStyles.imgWrap}>
+                                <FluidImage imgName='raffle.png' />
+                            </div>
+                            <h4><a>PROJECT</a></h4>
+                        </div>
+                        <div className={homeStyles.item}>
+                            <div className={homeStyles.imgWrap}>
+                                <FluidImage imgName='raffle.png' />
+                            </div>
+                            <h4><a>PROJECT</a></h4>
+                        </div>
+                    </div>
+                </section>
             </Layout>
             <GetInTouch />
             <Footer />

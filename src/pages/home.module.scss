@@ -134,3 +134,22 @@
     }
 }
 
+.projectWrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.item {
+    margin: 0 10px 68px;
+
+    .img-wrap {
+        width: 290px;
+        margin-bottom: 16px;
+    }
+
+    h4 {
+        text-align: left;
+        font-size: 16px;
+    }
+}

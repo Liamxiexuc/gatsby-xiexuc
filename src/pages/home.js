@@ -2,6 +2,7 @@ import React, { Fragment, useRef } from "react"
 import { Link } from 'gatsby'
 import { motion } from 'framer-motion'
 import Layout from '../components/layout'
+import Footer from '../components/footer'
 import Seo from '../components/Seo'
 import FluidImage from '../utils/fluidImage.jsx'
 import BottomArrow from '../assets/ICON/BottomArrow'
@@ -53,6 +54,7 @@ const HomePage = () => {
                 <FluidImage imgName='raffle.png' />
             </section>
             </Layout>
+            <Footer />
         </Fragment>
     )
 }

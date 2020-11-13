@@ -1,5 +1,4 @@
 import React from "react"
-import Footer from "./footer"
 import Header from "./header/header"
 import "../styles/base.scss"
 import layoutStyles from "./layout.module.scss"

@@ -92,3 +92,29 @@
         }
     }
 }
+
+.sole {
+    background-color: $green;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 0 100px;
+
+    .block {
+        z-index: 2;
+        width: auto;
+
+        h4 {
+            font-size: 17px;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .request-link {
+
+            &::after {
+                background: white;
+                z-index: -1;
+            }
+        }
+    }
+}

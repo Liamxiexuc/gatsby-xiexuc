@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Layout from '../components/layout'
 import Footer from '../components/footer'
 import Seo from '../components/Seo'
-import GetInTouch from '../components/getInTouch/GetInTouch'
+import GetInTouchSole from '../components/getInTouch/GetInTouchSole'
 import FluidImage from '../utils/fluidImage.jsx'
 import BottomArrow from '../assets/ICON/BottomArrow'
 import homeStyles from './home.module.scss'
@@ -121,7 +121,7 @@ const HomePage = () => {
                     </div>
                 </section>
             </Layout>
-            <GetInTouch />
+            <GetInTouchSole />
             <Footer />
         </Fragment>
     )

@@ -124,7 +124,7 @@
 }
 
 .project {
-    padding-top: 90px;
+    padding: 90px 0;
 
     h2 {
         text-align: left;
@@ -134,9 +134,10 @@
         margin-bottom: 68px;
 
         @include MQ(S) {
-            font-size: 48px;
-            line-height: 52px;
+            font-size: 2.4rem;
+            line-height: 42px;
             margin-bottom: 49px;
+            font-weight: 500;
         }
     }
 }
@@ -210,6 +211,10 @@
         text-align: left;
         font-size: 17px;
         margin-bottom: 0;
+
+        @include MQ(S) {
+            font-weight: 500;
+        }
     }
 
 }
@@ -217,3 +222,5 @@
 .item-link {
     cursor: pointer;
 }
+
+

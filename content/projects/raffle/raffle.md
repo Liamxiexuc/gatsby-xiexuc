@@ -1,6 +1,6 @@
 ---
 title: "Lucky Raffle"
-subTitle: "An native iOS application"
+subTitle: "A native iOS application"
 type: "project"
 sort: "5"
 date: "2020-10-18"

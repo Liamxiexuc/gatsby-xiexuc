@@ -53,40 +53,70 @@ const HomePage = () => {
                     <h2>Experiences I've Created</h2>
                     <div className={homeStyles.projectWrap}>
                         <div className={homeStyles.item}>
-                            <div className={homeStyles.imgWrap}>
-                                <FluidImage imgName='jrdashboard.png' />
-                            </div>
-                            <h4><a>JR Dashboard</a></h4>
+                            <Link className={homeStyles.itemLink} to='/project/jrdashboard'>
+                                <div className={homeStyles.imgWrap}>
+                                    <FluidImage imgName='jrdashboard.png' />
+                                    <div className={homeStyles.itemText}>
+                                        <p>A learning management system for JR Academy staffs, teachers & students.</p>
+                                    </div>
+                                </div>
+                            </Link>
+                            <h4><Link to='/project/jrdashboard' >JR Dashboard</Link></h4>
                         </div>
                         <div className={homeStyles.item}>
-                            <div className={homeStyles.imgWrap}>
-                                <FluidImage imgName='jiangren.png' />
-                            </div>
-                            <h4><a>JR Official Website</a></h4>
+                            <Link className={homeStyles.itemLink} to='/project/jiangren'>
+                                <div className={homeStyles.imgWrap}>
+                                    <FluidImage imgName='jiangren.png' />
+                                    <div className={homeStyles.itemText}>
+                                        <p>JR academy is determined to make job hunting in Australia easier for IT professions.</p>
+                                    </div>
+                                </div>
+                            </Link>
+                            <h4><Link to='/project/jiangren' >JR Official Website</Link></h4>
                         </div>
                         <div className={homeStyles.item}>
-                            <div className={homeStyles.imgWrap}>
-                                <FluidImage imgName='raffle.png' />
-                            </div>
-                            <h4><a>PROJECT</a></h4>
+                            <Link className={homeStyles.itemLink} to='/project/bookingapp'>
+                                <div className={homeStyles.imgWrap}>
+                                    <FluidImage imgName='bookingapp.png' />
+                                    <div className={homeStyles.itemText}>
+                                        <p>A super easy appointment scheduling System built for AIBT Global.</p>
+                                    </div>
+                                </div>
+                            </Link>
+                            <h4><Link to='/project/bookingapp' >Consultation Booking App</Link></h4>
                         </div>
                         <div className={homeStyles.item}>
-                            <div className={homeStyles.imgWrap}>
-                                <FluidImage imgName='raffle.png' />
-                            </div>
-                            <h4><a>PROJECT</a></h4>
+                            <Link className={homeStyles.itemLink} to='/project/tweetpaas'>
+                                <div className={homeStyles.imgWrap}>
+                                    <FluidImage imgName='paas.png' />
+                                    <div className={homeStyles.itemText}>
+                                        <p>A scalable Cloud based Platform.</p>
+                                    </div>
+                                </div>
+                            </Link>
+                            <h4><Link to='/project/tweetpaas' >Tweets PaaS</Link></h4>
                         </div>
                         <div className={homeStyles.item}>
-                            <div className={homeStyles.imgWrap}>
-                                <FluidImage imgName='raffle.png' />
-                            </div>
-                            <h4><a>PROJECT</a></h4>
+                            <Link className={homeStyles.itemLink} to='/project/raffle'>
+                                <div className={homeStyles.imgWrap}>
+                                    <FluidImage imgName='raffle.png' />
+                                    <div className={homeStyles.itemText}>
+                                        <p>A native iOS application build by Swift 5</p>
+                                    </div>
+                                </div>
+                            </Link>
+                            <h4><Link to='/project/raffle' >Lucky Raffle</Link></h4>
                         </div>
                         <div className={homeStyles.item}>
-                            <div className={homeStyles.imgWrap}>
-                                <FluidImage imgName='raffle.png' />
-                            </div>
-                            <h4><a>PROJECT</a></h4>
+                            <Link className={homeStyles.itemLink} to='/project/weatherapp'>
+                                <div className={homeStyles.imgWrap}>
+                                    <FluidImage imgName='weatherapp.png' />
+                                    <div className={homeStyles.itemText}>
+                                        <p>A weather SPA, which could search differents location and get their weather information.</p>
+                                    </div>
+                                </div>
+                            </Link>
+                            <h4><Link to='/project/weatherapp' >Weather App</Link></h4>
                         </div>
                     </div>
                 </section>

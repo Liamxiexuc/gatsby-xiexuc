@@ -189,7 +189,9 @@ const Project = (props) => {
                     </Link>
                 </div>
             </section>
-            <GetInTouch />
+            <Container>
+                <GetInTouch />
+            </Container>
             <Footer />
         </Fragment>
     )

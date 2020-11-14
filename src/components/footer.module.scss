@@ -1,11 +1,145 @@
-.footer {
-    padding: 1rem 0;
+footer {
+    padding: 116px 113px 65px;
+    color: #bbb;
+    background-color: $black;
+
+    @include MQ(L) {
+        padding: 56px 55px 22px;
+    }
+
+    @include MQ(ML) {
+        padding: 56px 13px 0;
+    }
+}
+
+.footer-top {
     display: flex;
-    justify-content: center;
-    font-size: 0.8rem;
-    border-top: 1px solid $border-color;
+    justify-content: space-between;
+
+    @include MQ(ML) {
+        padding-bottom: 20px;
+    }
+
+    @include MQ(M) {
+        flex-direction: column;
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 25px;
+        color: $green;
+    }
 
     p {
-        margin-bottom: 0;
+        color: #BBBBBB;
+
+        @include MQ(ML) {
+            font-size: 16px;
+        }
+    }
+
+    .info-listing {
+        margin: 0 40px;
+        display: flex;
+
+        @include MQ(L) {
+            margin: 0
+        }
+    }
+
+    .column {
+        margin: 0 44px 29px;
+        width: 280px;
+
+        @include MQ(L) {
+            width: 230px;
+        }
+
+        @include MQ(ML) {
+            width: 170px;
+        }
+
+        @include MQ(M) {
+            margin: 0 0 29px;
+        }
+    }
+
+    .site-column {
+        display: flex;
+        flex-direction: column;
+        margin: 0 44px 29px;
+
+        @include MQ(M) {
+            margin: 0 46px 29px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #BBBBBB;
+            margin-bottom: 4px;
+            @include MQ(ML) {
+                font-size: 16px;
+            }
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+
+    .in-touch {
+        width: 306px;
+
+        p {
+            color: white;
+        }
+
+        .email-link {
+            display: inline-block;
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 34px;
+            position: relative;
+            color: white;
+            cursor: pointer;
+            transition: color .3s;
+            text-decoration: none;
+
+            &:hover {
+                color: $green;
+
+                &::after {
+                    background-color: $green;
+                    
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -4px;
+                width: 100%;
+                height: 2px;
+                color: inherit;
+                background-color: currentColor;
+                transition: background-color .3s;
+            }
+        }
+
+        .icon-list {
+            display: flex;
+            list-style-type: none;
+            margin: 0 -30px;
+
+            li {
+                margin: 0 30px;
+            }
+
+            a {
+                color: $green;
+            }
+        }
     }
 }

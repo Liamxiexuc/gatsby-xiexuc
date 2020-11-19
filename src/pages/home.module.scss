@@ -142,14 +142,14 @@
     }
 }
 
-.projectWrap {
+.project-wrap {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
 
 .item {
-    margin: 0 0 68px;
+    margin: 0 0 60px;
     flex: 1;
 
     @include MQ(S) {
@@ -162,11 +162,16 @@
     }
 
     .img-wrap {
-        width: 300px;
-        margin-bottom: 16px;
-        height: 154px;
+        width: 437px;
+        margin-bottom: 18px;
+        height: 223px;
         overflow: hidden;
         position: relative;
+
+        @include MQ(ML) {
+            width: 320px;
+            height: 162px;
+        }
 
         @include MQ(S) {
             min-width: 300px;

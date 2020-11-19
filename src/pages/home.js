@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import Footer from '../components/footer'
 import Seo from '../components/Seo'
 import GetInTouchSole from '../components/getInTouch/GetInTouchSole'
+import Capabilities from '../components/capabilities/Capabilities'
 import FluidImage from '../utils/fluidImage.jsx'
 import BottomArrow from '../assets/ICON/BottomArrow'
 import homeStyles from './home.module.scss'
@@ -86,17 +87,6 @@ const HomePage = () => {
                             <h4><Link to='/project/bookingapp' >Consultation Booking App</Link></h4>
                         </div>
                         <div className={homeStyles.item}>
-                            <Link className={homeStyles.itemLink} to='/project/tweetpaas'>
-                                <div className={homeStyles.imgWrap}>
-                                    <FluidImage imgName='paas.png' />
-                                    <div className={homeStyles.itemText}>
-                                        <p>A scalable Cloud based Platform.</p>
-                                    </div>
-                                </div>
-                            </Link>
-                            <h4><Link to='/project/tweetpaas' >Tweets PaaS</Link></h4>
-                        </div>
-                        <div className={homeStyles.item}>
                             <Link className={homeStyles.itemLink} to='/project/raffle'>
                                 <div className={homeStyles.imgWrap}>
                                     <FluidImage imgName='raffle.png' />
@@ -107,19 +97,9 @@ const HomePage = () => {
                             </Link>
                             <h4><Link to='/project/raffle' >Lucky Raffle</Link></h4>
                         </div>
-                        <div className={homeStyles.item}>
-                            <Link className={homeStyles.itemLink} to='/project/weatherapp'>
-                                <div className={homeStyles.imgWrap}>
-                                    <FluidImage imgName='weatherapp.png' />
-                                    <div className={homeStyles.itemText}>
-                                        <p>A weather SPA, which could search differents location and get their weather information.</p>
-                                    </div>
-                                </div>
-                            </Link>
-                            <h4><Link to='/project/weatherapp' >Weather App</Link></h4>
-                        </div>
                     </div>
                 </section>
+                <Capabilities />
             </Layout>
             <GetInTouchSole />
             <Footer />

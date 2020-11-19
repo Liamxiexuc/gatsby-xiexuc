@@ -31,6 +31,17 @@
     text-align: left;
     position: relative;
 
+    @include MQ(ML) {
+        width: calc(50% - 60px);
+    }
+
+    @include MQ(S) {
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto 30px;
+        height: auto;
+    }
+
     &::before {
         content: '';
         position: absolute;

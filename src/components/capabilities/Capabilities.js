@@ -3,11 +3,11 @@ import capabilitiesStyles from "./capabilities.module.scss"
 
 const Capabilities = () => {
     const datas = [{
-        title: 'Front End',
-        content: 'I design and create good looking and responsive interface with modern front-end tech stack. Specialize in React and have hands on experience in bring your designs to life.'
+        title: 'Web Design',
+        content: 'I design and create good looking and responsive interface with a good user experience.'
     },{
-        title: 'Back End',
-        content: 'I am familiar with Node.js (Express) and Java (Spring Boot) for building RESTful API. Understanding of server architectures and design patterns.'
+        title: 'Full Stack Development',
+        content: ' I specialize in create web apps with the MERN stack & JAM stack. and have hands on experience in bring your designs to life.'
     },{
         title: 'Database Design',
         content: 'Experience in designing relational database using MySQL as well as non-relational database using MongoDB.'
@@ -27,6 +27,7 @@ const Capabilities = () => {
                             <div className={capabilitiesStyles.item}>
                                 <h3>{data.title}</h3>
                                 <p>{data.content}</p>
+                                <a href='https://www.linkedin.com/in/liam-chen' target='_blank' rel='noreferrer noopener'>View more</a>
                             </div>
                         )
                     })}

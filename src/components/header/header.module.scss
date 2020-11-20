@@ -6,7 +6,7 @@
     width: 100%;
     background-color: #ffffff;
     align-items: center;
-    z-index: 2;
+    z-index: 3;
     @include ease;
 
     @include MQ(ML) {

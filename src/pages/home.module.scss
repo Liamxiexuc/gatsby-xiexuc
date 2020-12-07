@@ -233,6 +233,7 @@
     cursor: pointer;
     display: inline-block;
     text-decoration: none;
+    transition: background-color .3s, color .3s;
 
     &:hover {
         background-color: $green;

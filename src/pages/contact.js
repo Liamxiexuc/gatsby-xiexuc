@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from 'framer-motion'
 import Layout from "../components/layout"
+import ContactForm from '../components/contactForm/ContactForm'
 import contactStyles from './contact.module.scss'
 
 const ContactPage = () => {
@@ -17,17 +18,13 @@ const ContactPage = () => {
                     This is how you can reach me...
                 </p>
                 <div className={contactStyles.boxes}>
-                    <div>
-                        <span className={contactStyles.text}>Emails: </span>
-                        liachenxiexu@gmail.com
+                    <div className={contactStyles.columnInfo}>
+                        <h3>Get In Touch</h3>
+                        <p>Creating future-proof digital experiences is what I do. Tell me about your needs, I'd love to collaborate with you.</p>
+                        <a className={contactStyles.emailLink} href="mailto:liam.xiexuc@gmail.com">liam.xiexuc@gmail.com</a>
                     </div>
-                    <div>
-                        <span className={contactStyles.text}>Phone: </span>
-                        (061) 404-380-038
-                    </div>
-                    <div>
-                    <span className={contactStyles.text}>Address: </span>
-                        Hobart, TAS 7053, AU
+                    <div className={contactStyles.columnForm}>
+                        <ContactForm />
                     </div>
                 </div>
             </motion.div>

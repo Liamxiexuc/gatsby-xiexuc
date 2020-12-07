@@ -21,7 +21,7 @@ const UploadForm = () => {
 
     return (
         <form>
-            <label>
+            <label className={galleryStyles.label}>
                 <input type='file' onChange={changeHandler}/>
                 <span>+</span>
             </label>

@@ -98,6 +98,7 @@ const HomePage = () => {
                             <h4><Link to='/project/raffle' >Lucky Raffle</Link></h4>
                         </div>
                     </div>
+                    <Link to='/project' className={homeStyles.button}>MORE WORK</Link>
                 </section>
                 <Capabilities />
             </Layout>

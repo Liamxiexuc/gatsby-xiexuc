@@ -1,5 +1,6 @@
 import React from 'react'
 import Img from "gatsby-image"
+import Tilt from "react-parallax-tilt";
 import projectStyles from './project.module.scss'
 
 const ProjectCard = ({ title, coverImage, date, brief, keywords }) => {
@@ -11,7 +12,9 @@ const ProjectCard = ({ title, coverImage, date, brief, keywords }) => {
             </div>
             <div className={projectStyles.cardBody}>
                 <div className={projectStyles.imgWrap}>
-                    <Img alt='project' fluid={coverImage.childImageSharp.fluid}/>
+                    <Tilt glareEnable={true} glareMaxOpacity={0.9} scale='1.15' glareColor="#fff" glarePosition="all">
+                        <Img alt='project' fluid={coverImage.childImageSharp.fluid} className={projectStyles.cardImgWrapper}/>
+                    </Tilt>
                 </div>
             </div>
             <div className={projectStyles.cardFooter}>

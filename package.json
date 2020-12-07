@@ -33,6 +33,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-parallax-tilt": "^1.4.67",
     "react-rough-notation": "^1.0.0",
     "swiper": "^6.3.5"
   },

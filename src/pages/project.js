@@ -2,6 +2,8 @@ import React, { Fragment } from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import { motion } from 'framer-motion'
 import Layout from '../components/layout'
+import GetInTouch from '../components/getInTouch/GetInTouch'
+import Footer from '../components/footer'
 import ProjectGrid from '../components/project/projectGrid'
 import  { MARKDAWN_SCHEMA } from '../constants/option'
 import Seo from '../components/Seo'
@@ -53,7 +55,9 @@ const ProjectPage = () => {
                     <p>Some of the projects I've worked on.</p>
                     <ProjectGrid projects={projects} />
                 </motion.div>
+                <GetInTouch />
             </Layout>
+            <Footer />
         </Fragment>
     )
 }

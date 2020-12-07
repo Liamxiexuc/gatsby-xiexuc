@@ -6,6 +6,7 @@ import Title from '../components/gallery/Title';
 import UploadForm from '../components/gallery/UploadForm';
 import ImageGrid from '../components/gallery/ImageGrid';
 import Modal from '../components/gallery/Model';
+import Footer from '../components/footer'
 import Seo from '../components/Seo'
 
 const GalleryPage = () => {
@@ -25,6 +26,7 @@ const GalleryPage = () => {
                 <ImageGrid setSelectedImg={setSelectedImg} />
                 { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} /> }
             </Layout>
+            <Footer />
         </Fragment>
     )
 }

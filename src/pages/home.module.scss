@@ -155,6 +155,7 @@
 
     @include MQ(S) {
         margin-bottom: 34px;
+        width: 100%;
     }
 
     a {
@@ -238,6 +239,13 @@
     &:hover {
         background-color: $green;
         color: $black;
+    }
+
+    @include MQ(S) {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        padding: 12px 35px 10px;
     }
 }
 

@@ -20,7 +20,7 @@
     flex: 1;
     padding-left: 48px;
 
-    @include MQ(S) {
+    @include MQ(M) {
         padding-left: 0;
     }
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Github from '../assets/ICON/Github'
 import Instagram from '../assets/ICON/Instagram'
 import Linkdin from '../assets/ICON/Linkdin'
@@ -38,16 +39,16 @@ const Footer = () => {
                     <a className={footerStyles.emailLink} href="mailto:liam.xiexuc@gmail.com">liam.xiexuc@gmail.com</a>
                     <ul className={footerStyles.iconList}>
                         <li>
-                            <a href='https://github.com/Liamxiexuc' target='_blank' rel='noreferrer noopener'><Github /></a>
+                            <OutboundLink href='https://github.com/Liamxiexuc' target='_blank' rel='noreferrer noopener'><Github /></OutboundLink>
                         </li>
                         <li>
-                            <a href='https://github.com/Liamxiexuc' target='_blank' rel='noreferrer noopener'><Instagram /></a>
+                            <OutboundLink href='https://www.instagram.com/nehc_uxeix' target='_blank' rel='noreferrer noopener'><Instagram /></OutboundLink>
                         </li>
                         <li>
-                            <a href='https://github.com/Liamxiexuc' target='_blank' rel='noreferrer noopener'><Linkdin /></a>
+                            <OutboundLink href='https://www.linkedin.com/in/liam-chen' target='_blank' rel='noreferrer noopener'><Linkdin /></OutboundLink>
                         </li>
                         <li>
-                            <a href='https://github.com/Liamxiexuc' target='_blank' rel='noreferrer noopener'><Facebook /></a>
+                            <OutboundLink href='https://www.facebook.com/people/Xiexu-Chen/100011499607808' target='_blank' rel='noreferrer noopener'><Facebook /></OutboundLink>
                         </li>
                     </ul>
                 </div>

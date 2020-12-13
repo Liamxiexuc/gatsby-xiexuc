@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react"
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 import contactFormStyles from "./contactForm.module.scss"
 
 const ContactForm = props => {
@@ -29,6 +30,11 @@ const ContactForm = props => {
     }
     const handleSubmit = (event) => {
         event.preventDefault();
+        trackCustomEvent({
+            category: "Submit Button",
+            action: "Click",
+            label: "Contact"
+        })
         return '';
     }
     return (

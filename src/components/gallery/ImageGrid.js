@@ -1,11 +1,21 @@
 import React from 'react';
 import useFirestore from '../../hooks/useFirestore';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 import { motion } from 'framer-motion';
 import Loader from '../../components/loader/Loader';
 import galleryStyles from './gallery.module.scss'
 
 const ImageGrid = ({ setSelectedImg }) => {
     const { docs, isLoading } = useFirestore('images');
+
+    const handleClickImg = (url) => {
+        setSelectedImg(url);
+        trackCustomEvent({
+            category: "Show Button",
+            action: "Click",
+            label: "Gallery"
+        })
+    }
 
     const MobileView = ({docs}) => {
         return (
@@ -16,7 +26,7 @@ const ImageGrid = ({ setSelectedImg }) => {
                             className={galleryStyles.imgWrap}
                             key={doc.id} 
                             layout
-                            onClick={() => setSelectedImg(doc.url)}
+                            onClick={() => handleClickImg(doc.url)}
                         >
                             <motion.img
                                 src={doc.url}
@@ -51,7 +61,7 @@ const ImageGrid = ({ setSelectedImg }) => {
                             className={galleryStyles.imgWrap}
                             key={doc.id} 
                             layout
-                            onClick={() => setSelectedImg(doc.url)}
+                            onClick={() => handleClickImg(doc.url)}
                         >
                             <motion.img
                                 src={doc.url}
@@ -67,7 +77,7 @@ const ImageGrid = ({ setSelectedImg }) => {
                             className={galleryStyles.imgWrap}
                             key={doc.id} 
                             layout
-                            onClick={() => setSelectedImg(doc.url)}
+                            onClick={() => handleClickImg(doc.url)}
                         >
                             <motion.img
                                 src={doc.url}
@@ -104,7 +114,7 @@ const ImageGrid = ({ setSelectedImg }) => {
                             className={galleryStyles.imgWrap}
                             key={doc.id} 
                             layout
-                            onClick={() => setSelectedImg(doc.url)}
+                            onClick={() => handleClickImg(doc.url)}
                         >
                             <motion.img
                                 src={doc.url}
@@ -120,7 +130,7 @@ const ImageGrid = ({ setSelectedImg }) => {
                             className={galleryStyles.imgWrap}
                             key={doc.id} 
                             layout
-                            onClick={() => setSelectedImg(doc.url)}
+                            onClick={() => handleClickImg(doc.url)}
                         >
                             <motion.img
                                 src={doc.url}
@@ -136,7 +146,7 @@ const ImageGrid = ({ setSelectedImg }) => {
                             className={galleryStyles.imgWrap}
                             key={doc.id} 
                             layout
-                            onClick={() => setSelectedImg(doc.url)}
+                            onClick={() => handleClickImg(doc.url)}
                         >
                             <motion.img
                                 src={doc.url}

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { Link, graphql } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Img from "gatsby-image"
 import Header from "../components/header/header"
 import Footer from "../components/footer"
@@ -140,12 +141,12 @@ const Project = (props) => {
                             { mobileOne ? (
                                 <div className={projectStyles.block}>
                                     <span>Website</span>
-                                    <a className={projectStyles.sourceLink} href={url} target='_blank' rel='noreferrer noopener'>Visit Website</a>
+                                    <OutboundLink className={projectStyles.sourceLink} href={url} target='_blank' rel='noreferrer noopener'>Visit Website</OutboundLink>
                                 </div>
                             ) : (
                                 <div className={projectStyles.block}>
                                     <span>Repository</span>
-                                    <a className={projectStyles.sourceLink} href={url} target='_blank' rel='noreferrer noopener'>Visit Repo</a>
+                                    <OutboundLink className={projectStyles.sourceLink} href={url} target='_blank' rel='noreferrer noopener'>Visit Repo</OutboundLink>
                                 </div>
                             )}
                             <div className={projectStyles.block}>

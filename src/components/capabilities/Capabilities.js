@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import capabilitiesStyles from "./capabilities.module.scss"
 
 const Capabilities = () => {
@@ -27,7 +28,7 @@ const Capabilities = () => {
                             <div className={capabilitiesStyles.item}>
                                 <h3>{data.title}</h3>
                                 <p>{data.content}</p>
-                                <a href='https://www.linkedin.com/in/liam-chen' target='_blank' rel='noreferrer noopener'>View more</a>
+                                <OutboundLink href='https://www.linkedin.com/in/liam-chen' target='_blank' rel='noreferrer noopener'>View more</OutboundLink>
                             </div>
                         )
                     })}

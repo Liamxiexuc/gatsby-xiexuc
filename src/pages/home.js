@@ -1,6 +1,7 @@
 import React, { Fragment, useRef } from "react"
 import { Link } from 'gatsby'
 import { motion } from 'framer-motion'
+import { trackCustomEvent, OutboundLink } from 'gatsby-plugin-google-analytics'
 import Layout from '../components/layout'
 import Footer from '../components/footer'
 import Seo from '../components/Seo'
@@ -17,11 +18,17 @@ import Facebook from '../assets/ICON/Facebook'
 const HomePage = () => {
     const projectSection = useRef(null);
 
-    const gotoProjectSection = () =>
+    const gotoProjectSection = () => {
         window.scrollTo({
             top: projectSection.current.offsetTop,
             behavior: 'smooth'
+        });
+        trackCustomEvent({
+            category: "Scroll Button",
+            action: "Click",
+            label: "Home"
         })
+    }
 
     return (
         <Fragment>
@@ -43,10 +50,10 @@ const HomePage = () => {
                         </p>
                     </div>
                     <div className={homeStyles.logoWrap}>
-                        <a href='https://github.com/Liamxiexuc' target='_blank' rel='noreferrer noopener'><Github /></a>
-                        <a href='https://www.instagram.com/nehc_uxeix' target='_blank' rel='noreferrer noopener'><Instagram /></a>
-                        <a href='https://www.linkedin.com/in/liam-chen' target='_blank' rel='noreferrer noopener'><Linkdin /></a>
-                        <a href='https://www.facebook.com/people/Xiexu-Chen/100011499607808' target='_blank' rel='noreferrer noopener'><Facebook /></a>
+                        <OutboundLink href='https://github.com/Liamxiexuc' target='_blank' rel='noreferrer noopener'><Github /></OutboundLink>
+                        <OutboundLink href='https://www.instagram.com/nehc_uxeix' target='_blank' rel='noreferrer noopener'><Instagram /></OutboundLink>
+                        <OutboundLink href='https://www.linkedin.com/in/liam-chen' target='_blank' rel='noreferrer noopener'><Linkdin /></OutboundLink>
+                        <OutboundLink href='https://www.facebook.com/people/Xiexu-Chen/100011499607808' target='_blank' rel='noreferrer noopener'><Facebook /></OutboundLink>
                     </div>
                     <BottomArrow className={homeStyles.arrow} onClick={gotoProjectSection} />
                 </motion.div>

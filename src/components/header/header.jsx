@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Tab from './Tab';
 import headerStyles from './header.module.scss';
-import signiture from '../../assets/xiexuc.svg';
+import signature from '../../assets/xiexuc.svg';
 
 const Header = () => {
   const routes = [
@@ -50,7 +50,7 @@ const Header = () => {
     >
       <div className={headerStyles.logoContainer}>
         <Link className={headerStyles.title} to="/">
-          <img alt="logo" src={signiture} />
+          <img alt="logo" src={signature} />
         </Link>
       </div>
       <input

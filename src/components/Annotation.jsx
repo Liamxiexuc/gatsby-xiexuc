@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { RoughNotation } from 'react-rough-notation';
 
 const Annotation = ({ children, ...props }) => {

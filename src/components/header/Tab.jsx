@@ -20,7 +20,12 @@ const Tab = ({ route }) => {
       activeClassName={headerStyles.activeNavItem}
       to={route.url}
     >
-      <li onMouseOver={onMouseOver} onMouseLeave={onMouseLeave}>
+      <li
+        onMouseOver={onMouseOver}
+        onMouseLeave={onMouseLeave}
+        onFocus={onMouseOver}
+        onBlur={onMouseLeave}
+      >
         <Annotation strokeWidth="2" type="box" show={hovered}>
           <span>{route.name}</span>
         </Annotation>

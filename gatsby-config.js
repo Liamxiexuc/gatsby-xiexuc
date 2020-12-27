@@ -1,8 +1,8 @@
-const path = require(`path`);
 const os = require('os');
-const Linux_DIR = __dirname;
-const Win_DIR = Linux_DIR.replace(/\\/g,'\/');
-const DIR_NAME = os.type() === 'Windows_NT' ? Win_DIR : Linux_DIR;
+
+const LINUX_DIR = __dirname;
+const WIN_DIR = LINUX_DIR.replace(/\\/g, '/');
+const DIR_NAME = os.type() === 'Windows_NT' ? WIN_DIR : LINUX_DIR;
 
 module.exports = {
   siteMetadata: {
@@ -13,63 +13,63 @@ module.exports = {
     menuLinks: [
       {
         name: 'Landing',
-        link: '/'
+        link: '/',
       },
       {
         name: 'Home',
-        link: '/home/'
+        link: '/home/',
       },
       {
         name: 'Projects',
-        link: '/project/'
+        link: '/project/',
       },
       {
         name: 'Blog',
-        link: '/blog/'
+        link: '/blog/',
       },
       {
         name: 'Gallery',
-        link: '/gallery/'
+        link: '/gallery/',
       },
       {
         name: 'Contact',
-        link: '/contact/'
-      }
-    ]
+        link: '/contact/',
+      },
+    ],
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-185435086-1",
+        trackingId: 'UA-185435086-1',
         head: true,
         anonymize: true,
         respectDNT: true,
-        pageTransitionDelay: 0
+        pageTransitionDelay: 0,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        data: `@import "${DIR_NAME}/src/styles/styles";`
-      }
+        data: `@import '${DIR_NAME}/src/styles/styles';`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'contents',
-        path: `${__dirname}/content/`
-      }
+        path: `${__dirname}/content/`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/assets/`
-      }
+        path: `${__dirname}/src/assets/`,
+      },
     },
-    
+
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -81,23 +81,23 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 750,
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Xiexuc.xyz`,
-        short_name: `Xiexuc`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
-        icon: `src/assets/favicon.png`
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
       },
     },
-  ]
-}
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Xiexuc.xyz',
+        short_name: 'Xiexuc',
+        start_url: '/',
+        background_color: '#f7f0eb',
+        theme_color: '#a2466c',
+        display: 'standalone',
+        icon: 'src/assets/favicon.png',
+      },
+    },
+  ],
+};

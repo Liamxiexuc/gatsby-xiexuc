@@ -1,0 +1,22 @@
+{
+    "extends": [
+        "airbnb",
+        "airbnb/hooks"
+    ],
+    "rules": {
+        "strict": 0,
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "comma-dangle": [
+            "error",
+            "always-multiline"
+        ],
+        "react/prop-types": 0,
+        "arrow-parens": ["error", "as-needed"],
+        "react/jsx-props-no-spreading": 0,
+        "react/destructuring-assignment": 0,
+        "arrow-body-style": 0
+    }
+}

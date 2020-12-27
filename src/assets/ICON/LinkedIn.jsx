@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Linkdin = ({
+const LinkedIn = ({
   width = '25',
   height = '20',
   color = '#fff',
@@ -10,7 +10,7 @@ const Linkdin = ({
     aria-hidden="true"
     focusable="false"
     data-prefix="fab"
-    data-icon="linkedin-in"
+    data-icon="linkedIn-in"
     width={width}
     height={height}
     className={className}
@@ -25,4 +25,4 @@ const Linkdin = ({
   </svg>
 );
 
-export default Linkdin;
+export default LinkedIn;

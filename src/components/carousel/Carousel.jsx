@@ -10,7 +10,7 @@ import carouselStyles from './carousel.module.scss';
 
 SwiperCore.use([Pagination, Scrollbar]);
 
-export const Carousel = ({
+const Carousel = ({
   sliderOne,
   sliderTwo,
   sliderThree,

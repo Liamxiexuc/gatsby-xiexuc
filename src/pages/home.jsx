@@ -1,4 +1,4 @@
-import React, { Fragment, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 import { trackCustomEvent, OutboundLink } from 'gatsby-plugin-google-analytics';
@@ -32,7 +32,7 @@ const HomePage = () => {
   };
 
   return (
-    <Fragment key="HomePage">
+    <>
       <Seo title="my home page" />
       <Layout>
         <motion.div
@@ -163,7 +163,7 @@ const HomePage = () => {
       </Layout>
       <GetInTouchSole />
       <Footer />
-    </Fragment>
+    </>
   );
 };
 

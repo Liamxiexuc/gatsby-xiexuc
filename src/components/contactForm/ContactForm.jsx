@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import contactFormStyles from './contactForm.module.scss';
 
@@ -37,7 +37,7 @@ const ContactForm = () => {
     return '';
   };
   return (
-    <Fragment key="ContactForm">
+    <>
       <form id="form" className={contactFormStyles.form}>
         <div className={contactFormStyles.formGroup}>
           <label style={showNameLabel} className={contactFormStyles.label}>
@@ -81,7 +81,7 @@ const ContactForm = () => {
           </button>
         </div>
       </form>
-    </Fragment>
+    </>
   );
 };
 

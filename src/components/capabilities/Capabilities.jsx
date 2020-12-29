@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import capabilitiesStyles from './capabilities.module.scss';
 
@@ -27,7 +27,7 @@ const Capabilities = () => {
   ];
 
   return (
-    <Fragment key="Capabilities">
+    <>
       <section className={capabilitiesStyles.capabilities}>
         <h2>Capabilities</h2>
         <div className={capabilitiesStyles.capabilitiesWrap}>
@@ -48,7 +48,7 @@ const Capabilities = () => {
           })}
         </div>
       </section>
-    </Fragment>
+    </>
   );
 };
 

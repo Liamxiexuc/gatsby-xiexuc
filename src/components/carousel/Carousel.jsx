@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import Img from 'gatsby-image';
 import SwiperCore, { Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -19,7 +19,7 @@ const Carousel = ({
   const [activeSlide, setActiveSlide] = useState('01');
 
   return (
-    <Fragment key="Carousel">
+    <>
       <section className={carouselStyles.sliderCounter}>
         <h3>Inner Pages</h3>
         <div className={carouselStyles.counterWrap}>
@@ -71,7 +71,7 @@ const Carousel = ({
           </SwiperSlide>
         </Swiper>
       </section>
-    </Fragment>
+    </>
   );
 };
 

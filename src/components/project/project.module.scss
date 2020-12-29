@@ -1,5 +1,5 @@
 .wrap {
-    padding: 2rem 0;
+    padding: 2rem 0 6rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -37,6 +37,9 @@
 .img-wrap {
     height: 100%;
     & > div {
+        height: 100%;
+    }
+    .card-img-wrapper {
         height: 100%;
     }
 }

@@ -18,6 +18,7 @@
         "react/jsx-props-no-spreading": 0,
         "react/destructuring-assignment": 0,
         "arrow-body-style": 0,
-        "jsx-a11y/label-has-associated-control": 0
+        "jsx-a11y/label-has-associated-control": 0,
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
     }
 }

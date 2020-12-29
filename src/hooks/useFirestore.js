@@ -1,29 +1,27 @@
 import { useState, useEffect } from 'react';
-import getFirebase from '../firebase/config'
+import getFirebase from '../firebase/config';
 
-const useFirestore = (collection) => {
-    const [docs, setDocs] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+const useFirestore = collection => {
+  const [docs, setDocs] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        const { projectFirestore } = getFirebase();
-        const unsub = projectFirestore.collection(collection)
-        .orderBy('createdAt', 'desc')
-        .onSnapshot(snap => {
-            let documents = [];
-            snap.forEach(doc => {
-                documents.push({...doc.data(), id: doc.id});
-            });
-            setDocs(documents);
-            setIsLoading(false);
+  useEffect(() => {
+    const { projectFirestore } = getFirebase();
+    const unsub = projectFirestore.collection(collection)
+      .orderBy('createdAt', 'desc')
+      .onSnapshot(snap => {
+        const documents = [];
+        snap.forEach(doc => {
+          documents.push({ ...doc.data(), id: doc.id });
         });
+        setDocs(documents);
+        setIsLoading(false);
+      });
 
-        return () => unsub();
-        // this is a cleanup function that react will run when
-        // a component using the hook unmounts
-    }, [collection]);
+    return () => unsub();
+  }, [collection]);
 
-    return { docs, isLoading };
-}
+  return { docs, isLoading };
+};
 
 export default useFirestore;

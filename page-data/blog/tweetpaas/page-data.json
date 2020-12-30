@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-blog-jsx","path":"/blog/tweetpaas","result":{"data":{"markdownRemark":{"frontmatter":{"title":"Tweets PaaS","date":"2020-10-18"},"html":"<p>Tweets PaaS</p>\n<h2>Coming Soon</h2>\n<ol>\n<li>Gatsby</li>\n<li>GraphQL</li>\n<li>React</li>\n</ol>"}},"pageContext":{"slug":"tweetpaas"}},"staticQueryHashes":["3057670693"]}

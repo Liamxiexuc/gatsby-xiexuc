@@ -9,14 +9,15 @@ const MasonryLayout = props => {
     columnWrapper[`column${i}`] = [];
   }
 
-  for (let i = 0; i < props.children.length; i++) {
-    const columnIndex = i % props.columns;
+  props.children.forEach((item, index) => {
+    const columnIndex = index % props.columns;
     columnWrapper[`column${columnIndex}`].push(
-      <div style={{ marginBottom: `${props.gap}px` }} key={i}>
-        {props.children[i]}
+      // eslint-disable-next-line react/no-array-index-key
+      <div style={{ marginBottom: `${props.gap}px` }} key={index}>
+        {item}
       </div>,
     );
-  }
+  });
 
   for (let i = 0; i < props.columns; i++) {
     result.push(
